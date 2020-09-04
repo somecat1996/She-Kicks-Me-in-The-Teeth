@@ -22,7 +22,8 @@ public class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        dest = this.transform.position;
+        v = this.transform.position;
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
     }
@@ -39,7 +40,7 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.A))
         {
             //判断是否超出跑道
-            if (this.transform.position.y <=v.y)
+            if (this.transform.position.y < v.y + Y / 2)
             {
                 dest = new Vector3(this.transform.position.x, this.transform.position.y + Y, 0);
             }
@@ -47,7 +48,7 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.D))
         {
             //判断是否超出跑道
-            if (this.transform.position.y >= v.y)
+            if (this.transform.position.y > v.y - Y / 2)
             {
                 dest = new Vector3(this.transform.position.x, this.transform.position.y - Y, 0);
             }
