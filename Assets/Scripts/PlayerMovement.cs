@@ -7,10 +7,6 @@ public class PlayerMovement : MonoBehaviour
     private Animator anim;
     private Rigidbody2D rb;
 
-    [Header("记录人物位置延迟时间")]
-    public float time;
-    private bool pT;
-
     [Header("人物上下移动距离")]
     public float Y;
     [Header("切换赛道速度")]
@@ -31,11 +27,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (pT)
-        {
-            Invoke("Wait", time);
-        }
-        
+
         //移动
         if (Input.GetKeyDown(KeyCode.A))
         {
@@ -54,12 +46,5 @@ public class PlayerMovement : MonoBehaviour
             }
         }
         transform.position = Vector3.MoveTowards(transform.position, dest, move);
-    }
-
-    private void OnLevelWasLoaded(int level)
-    {
-        //记录初始位置
-        v = transform.position;
-        pT = false;
     }
 }
