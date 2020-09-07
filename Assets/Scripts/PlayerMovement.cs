@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -15,6 +17,11 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 dest;
     private Vector3 v;
 
+
+    public GameObject hull;
+
+    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,22 +34,37 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (this.transform.position.y > v.y + Y / 2)
+        {
+            hull.layer = LayerMask.NameToLayer("FirstTrack");
+        }
+        else if (this.transform.position.y < v.y - Y / 2)
+        {
+            hull.layer = LayerMask.NameToLayer("ThirdTrack");
+        }
+        else
+        {
+            hull.layer = LayerMask.NameToLayer("SecondTrack");
+        }
 
+       
         //移动
         if (Input.GetKeyDown(KeyCode.A))
         {
-            //判断是否超出跑道
+            //判断是否超出上跑道
             if (this.transform.position.y < v.y + Y / 2)
             {
                 dest = new Vector3(this.transform.position.x, this.transform.position.y + Y, 0);
+                hull.layer = LayerMask.NameToLayer("FirstTrack");
             }
         }
         if (Input.GetKeyDown(KeyCode.D))
         {
-            //判断是否超出跑道
+            //判断是否超出下跑道
             if (this.transform.position.y > v.y - Y / 2)
             {
                 dest = new Vector3(this.transform.position.x, this.transform.position.y - Y, 0);
+                hull.layer = LayerMask.NameToLayer("ThirdTrack");
             }
         }
         transform.position = Vector3.MoveTowards(transform.position, dest, move);
