@@ -909,6 +909,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Y: 1.5
   move: 1
+  hull: {fileID: 546640972}
 --- !u!1 &693105709
 GameObject:
   m_ObjectHideFlags: 0
