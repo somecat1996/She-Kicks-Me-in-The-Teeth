@@ -22,7 +22,7 @@ public class TrackBehavior : MonoBehaviour
     void Update()
     {
         float x = parent.TransformPoint(transform.localPosition).x;
-        Debug.Log(x);
+
         if (x <= leftRange)
         {
             Destroy(this.gameObject);
