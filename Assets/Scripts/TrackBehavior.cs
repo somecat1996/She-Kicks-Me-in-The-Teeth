@@ -7,40 +7,30 @@ public class TrackBehavior : MonoBehaviour
     public int leftRange;
     public int rightRange;
 
-    private float velocity;
-    private float accleration;
-    private Rigidbody2D rb;
-    private GameController gm;
+    private TrackController trackController;
+    private Transform parent;
 
     private bool haveCreated = false;
     // Start is called before the first frame update
     void Awake()
     {
-        rb = GetComponent<Rigidbody2D>();
-        gm = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
+        trackController = GameObject.FindGameObjectWithTag("TrackController").GetComponent<TrackController>();
+        parent = GameObject.FindGameObjectWithTag("TrackController").GetComponent<Transform>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        velocity += accleration * Time.deltaTime;
-        rb.velocity = Vector2.left * velocity;
-
-        if (transform.position.x <= leftRange)
+        float x = parent.TransformPoint(transform.localPosition).x;
+        Debug.Log(x);
+        if (x <= leftRange)
         {
             Destroy(this.gameObject);
         }
-        else if (transform.position.x <= rightRange && !haveCreated)
+        else if (x <= rightRange && !haveCreated)
         {
-            gm.OnCreateTrack();
+            trackController.OnCreateTrack();
             haveCreated = true;
         }
-    }
-
-    public void OnInitial(float v, float a)
-    {
-        velocity = v;
-        accleration = a;
-        rb.velocity = Vector2.left * velocity;
     }
 }
