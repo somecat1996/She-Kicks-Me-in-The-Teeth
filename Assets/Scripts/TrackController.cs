@@ -21,11 +21,14 @@ public class TrackController : MonoBehaviour
     public int level;
 
     public Text meterDisplay;
+    public Text finalMeterDisplay;
 
     public float meter;
 
     private Rigidbody2D rb;
     private int trackNum;
+
+    private bool end;
     // Start is called before the first frame update
     void Start()
     {
@@ -34,19 +37,24 @@ public class TrackController : MonoBehaviour
 
         meter = 0;
         meterDisplay.text = "Meter: " + math.floor(meter);
+
+        end = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (velocity <= maxVelocity)
+        if (!end)
         {
-            velocity += acceleration * Time.deltaTime;
-            rb.velocity = Vector2.left * velocity;
-        }
+            if (velocity <= maxVelocity)
+            {
+                velocity += acceleration * Time.deltaTime;
+                rb.velocity = Vector2.left * velocity;
+            }
 
-        meter += velocity * Time.deltaTime;
-        meterDisplay.text = "Meter: " + math.floor(meter);
+            meter += velocity * Time.deltaTime;
+            meterDisplay.text = "Meter: " + math.floor(meter);
+        }
     }
 
     public void OnCreateTrack()
@@ -55,5 +63,12 @@ public class TrackController : MonoBehaviour
         newTrack.transform.localPosition = new Vector3(trackNum * trackLength + trackOffset, 0, 0);
         trackNum += 1;
         newTrack.GetComponent<TrackBehavior>().CreateBlocks(level);
+    }
+
+    public void OnEnd()
+    {
+        end = true;
+        finalMeterDisplay.text = "Meter: " + math.floor(meter);
+        rb.velocity = Vector2.zero;
     }
 }

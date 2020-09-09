@@ -40,4 +40,9 @@ public class GameController : MonoBehaviour
     {
         SceneManager.LoadScene(1);
     }
+
+    public void OnEnd()
+    {
+        endUI.SetActive(true);
+    }
 }

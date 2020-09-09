@@ -4,15 +4,20 @@ using UnityEngine;
 
 public class PlayerCollider : MonoBehaviour
 {
+    public TrackController trackController;
+    public GameController gameController;
+    public int healthPoint;
     // Start is called before the first frame update
-    void Start()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if (collision.tag == "Block")
+        {
+            healthPoint -= 1;
+            if (healthPoint <= 0)
+            {
+                trackController.OnEnd();
+                gameController.OnEnd();
+            }
+        }
     }
 }
