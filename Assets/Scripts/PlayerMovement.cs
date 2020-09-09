@@ -54,8 +54,12 @@ public class PlayerMovement : MonoBehaviour
             //判断是否超出上跑道
             if (this.transform.position.y < v.y + Y / 2)
             {
+<<<<<<< HEAD
                 dest = new Vector3(this.transform.position.x, this.transform.position.y + Y, 0);
                 hull.layer = LayerMask.NameToLayer("FirstTrack");
+=======
+                dest = new Vector3(this.transform.position.x, this.transform.position.y + Y, this.transform.position.z + Y);
+>>>>>>> 7c3d824536983412121377056771586c944e3b1a
             }
         }
         if (Input.GetKeyDown(KeyCode.D))
@@ -63,8 +67,12 @@ public class PlayerMovement : MonoBehaviour
             //判断是否超出下跑道
             if (this.transform.position.y > v.y - Y / 2)
             {
+<<<<<<< HEAD
                 dest = new Vector3(this.transform.position.x, this.transform.position.y - Y, 0);
                 hull.layer = LayerMask.NameToLayer("ThirdTrack");
+=======
+                dest = new Vector3(this.transform.position.x, this.transform.position.y - Y, this.transform.position.z - Y);
+>>>>>>> 7c3d824536983412121377056771586c944e3b1a
             }
         }
         transform.position = Vector3.MoveTowards(transform.position, dest, move);

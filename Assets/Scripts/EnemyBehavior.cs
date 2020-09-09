@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameManager : MonoBehaviour
+public class EnemyBehavior : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -14,5 +14,13 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Attack")
+        {
+            Destroy(gameObject);
+        }
     }
 }

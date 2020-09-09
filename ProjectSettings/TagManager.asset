@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Enemy
   - Block
+  - TrackController
+  - Attack
   layers:
   - Default
   - TransparentFX
@@ -40,18 +42,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: Default
-    uniqueID: 0
-    locked: 0
   - name: Background
     uniqueID: 2476476525
     locked: 0
-  - name: FirstTrack
-    uniqueID: 1228877097
-    locked: 0
-  - name: SecondTrack
-    uniqueID: 277947757
-    locked: 0
-  - name: ThirdTrack
-    uniqueID: 1792975621
+  - name: Default
+    uniqueID: 0
     locked: 0
