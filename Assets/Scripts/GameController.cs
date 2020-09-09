@@ -45,4 +45,9 @@ public class GameController : MonoBehaviour
     {
         endUI.SetActive(true);
     }
+
+    public void OnQuit()
+    {
+        Application.Quit();
+    }
 }
