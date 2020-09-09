@@ -5,7 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
-    public GameObject ui;
+    public GameObject pauseUI;
+    public GameObject endUI;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,13 +22,13 @@ public class GameController : MonoBehaviour
     void OnPause()
     {
         Time.timeScale = 0;
-        ui.SetActive(true);
+        pauseUI.SetActive(true);
     }
 
     public void OnResume()
     {
         Time.timeScale = 1f;
-        ui.SetActive(false);
+        pauseUI.SetActive(false);
     }
 
     public void OnExit()

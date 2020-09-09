@@ -22,7 +22,7 @@ public class TrackController : MonoBehaviour
 
     public Text meterDisplay;
 
-    private float meter;
+    public float meter;
 
     private Rigidbody2D rb;
     private int trackNum;
