@@ -33,7 +33,7 @@ public class PlayerAttack : MonoBehaviour
             {
                 AnimationEvent _event = new AnimationEvent();
                 _event.functionName = "PeopleAttack";
-                _event.time = 0.1f;
+                _event.time = 0.01f;
                 animationClips[i].AddEvent(_event);
                 break;
             }
@@ -52,10 +52,12 @@ public class PlayerAttack : MonoBehaviour
             //动画播放
             animator.SetTrigger("attacking");
         }
+        ATK.SetActive(false);
     }
 
     private void PeopleAttack()
     {
+        Debug.Log("1");
         ATK.SetActive(true);
         #region
         //AudioManager.PlayerAttackAudio();
