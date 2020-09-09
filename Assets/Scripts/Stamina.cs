@@ -9,6 +9,8 @@ public class Stamina : MonoBehaviour
     public float maxStaminaValue;
     [Header("耐力条（Image）")]
     public Image staminaImage;
+    [Header("耐力框（Image）")]
+    public Image stamina;
 
     //[Tooltip("耐力条数值文本")]
     //public Text text;
