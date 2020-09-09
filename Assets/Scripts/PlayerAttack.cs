@@ -24,6 +24,8 @@ public class PlayerAttack : MonoBehaviour
     private Animator animator;
     private AnimationClip[] animationClips;
 
+    private bool canAttack;
+
     private void Start()
     {
         //attackPosRight = transform.Find("Attack");
@@ -40,6 +42,8 @@ public class PlayerAttack : MonoBehaviour
                 break;
             }
         }
+
+        canAttack = true;
     }
 
     // Update is called once per frame
@@ -48,32 +52,26 @@ public class PlayerAttack : MonoBehaviour
         //传值
         haoWan = GetComponent<Stamina>().HaoWan;
 
-        if (Input.GetMouseButtonDown(0)&&!haoWan)
+        if (canAttack&&Input.GetMouseButtonDown(0)&&!haoWan)
         {
             GetComponent<Stamina>().ReduceStaminaValue(staminaValue);
             //动画播放
             animator.SetTrigger("attacking");
         }
-        ATK.SetActive(false);
     }
 
-    private void PeopleAttack()
+    public void OnAttackStart()
     {
-        Debug.Log("1");
         ATK.SetActive(true);
-        #region
-        //AudioManager.PlayerAttackAudio();
-        //Collider2D[] enemies = Physics2D.OverlapCircleAll(attackPosRight.position, attackRange, whatIsEnemies);
-        //for (int i = 0; i < enemies.Length; i++)
-        //{
-        //    Enemy tempEnemy = enemies[i].GetComponent<Enemy>();
-        //    if (tempEnemy != null)
-        //    {
-        //        tempEnemy.ReduceBlood(gameObject, damage, HitType.puTon, PlayerSkillType.commonHit);
-        //    }
 
-        //}
-        #endregion
+        canAttack = false;
+    }
+
+    public void OnAttackEnd()
+    {
+        ATK.SetActive(false);
+
+        canAttack = true;
     }
 }
 
