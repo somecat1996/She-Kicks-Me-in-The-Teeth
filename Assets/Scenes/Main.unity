@@ -2146,7 +2146,7 @@ MonoBehaviour:
   maxStaminaValue: 100
   staminaImage: {fileID: 1632300270}
   stamina: {fileID: 154076005}
-  timer: 1
+  timer: 3
   secStaminaValue: 10
   HaoWan: 0
 --- !u!1 &1548673418
