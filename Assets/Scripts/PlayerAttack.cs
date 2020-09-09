@@ -16,6 +16,8 @@ public class PlayerAttack : MonoBehaviour
     public float damage;
     [Header("攻击所需消耗的耐力值")]
     public float staminaValue;
+    [Header("插入攻击帧的时间")]
+    public float atkTime;
 
     private bool haoWan;
 
@@ -33,7 +35,7 @@ public class PlayerAttack : MonoBehaviour
             {
                 AnimationEvent _event = new AnimationEvent();
                 _event.functionName = "PeopleAttack";
-                _event.time = 0.01f;
+                _event.time = atkTime;
                 animationClips[i].AddEvent(_event);
                 break;
             }
