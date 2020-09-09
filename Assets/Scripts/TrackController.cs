@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TrackController : MonoBehaviour
 {
@@ -18,6 +20,10 @@ public class TrackController : MonoBehaviour
     public GameObject[] tracks;
     public int level;
 
+    public Text meterDisplay;
+
+    private float meter;
+
     private Rigidbody2D rb;
     private int trackNum;
     // Start is called before the first frame update
@@ -25,6 +31,9 @@ public class TrackController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         trackNum = 1;
+
+        meter = 0;
+        meterDisplay.text = "Meter: " + math.floor(meter);
     }
 
     // Update is called once per frame
@@ -35,6 +44,9 @@ public class TrackController : MonoBehaviour
             velocity += acceleration * Time.deltaTime;
             rb.velocity = Vector2.left * velocity;
         }
+
+        meter += velocity * Time.deltaTime;
+        meterDisplay.text = "Meter: " + math.floor(meter);
     }
 
     public void OnCreateTrack()

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
@@ -14,7 +15,7 @@ public class GameController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape)) OnPause();
+        if (SceneManager.GetActiveScene().buildIndex == 1 && Input.GetKeyDown(KeyCode.Escape)) OnPause();
     }
 
     void OnPause()
@@ -27,5 +28,15 @@ public class GameController : MonoBehaviour
     {
         Time.timeScale = 1f;
         ui.SetActive(false);
+    }
+
+    public void OnExit()
+    {
+        SceneManager.LoadScene(0);
+    }
+
+    public void OnStart()
+    {
+        SceneManager.LoadScene(1);
     }
 }
