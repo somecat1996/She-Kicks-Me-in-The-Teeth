@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
-    [Header("攻击原点")]
-    private Transform attackPosRight;
-    [Header("攻击范围")]
-    public float attackRange;
-    [Header("敌人所在图层")]
-    public LayerMask whatIsEnemies;
+    //[Header("攻击原点")]
+    //private Transform attackPosRight;
+    //[Header("攻击范围")]
+    //public float attackRange;
+    //[Header("敌人所在图层")]
+    //public LayerMask whatIsEnemies;
+    [Header("攻击判断框")]
+    public GameObject ATK;
     [Header("攻击伤害")]
     public float damage;
     [Header("攻击所需消耗的耐力值")]
@@ -22,7 +24,7 @@ public class PlayerAttack : MonoBehaviour
 
     private void Start()
     {
-        attackPosRight = transform.Find("Attack");
+        //attackPosRight = transform.Find("Attack");
         animator = GetComponent<Animator>();
         animationClips = animator.runtimeAnimatorController.animationClips;
         for (int i = 0; i < animationClips.Length; i++)
@@ -54,6 +56,7 @@ public class PlayerAttack : MonoBehaviour
 
     private void PeopleAttack()
     {
+        ATK.SetActive(true);
         #region
         //AudioManager.PlayerAttackAudio();
         //Collider2D[] enemies = Physics2D.OverlapCircleAll(attackPosRight.position, attackRange, whatIsEnemies);

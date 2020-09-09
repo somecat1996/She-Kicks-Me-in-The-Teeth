@@ -29,7 +29,7 @@ public class Stamina : MonoBehaviour
     // 是否开始回复耐力值
     bool isReply = false;
 
-    public float nl;
+    private float nl;
 
     void Start()
     {

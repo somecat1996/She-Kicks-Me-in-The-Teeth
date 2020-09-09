@@ -17,10 +17,10 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 dest;
     private Vector3 v;
 
-
-    public GameObject hull;
-
-    
+    [Header("碰撞判断框")]
+    public GameObject COLL;
+    [Header("攻击判断框")]
+    public GameObject ATK;
 
     // Start is called before the first frame update
     void Start()
@@ -36,15 +36,18 @@ public class PlayerMovement : MonoBehaviour
     {
         if (this.transform.position.y > v.y + Y / 2)
         {
-            hull.layer = LayerMask.NameToLayer("FirstTrack");
+            ATK.layer = LayerMask.NameToLayer("FirstTrack");
+            COLL.layer = LayerMask.NameToLayer("FirstTrack");
         }
         else if (this.transform.position.y < v.y - Y / 2)
         {
-            hull.layer = LayerMask.NameToLayer("ThirdTrack");
+            ATK.layer = LayerMask.NameToLayer("ThirdTrack");
+            COLL.layer = LayerMask.NameToLayer("ThirdTrack");
         }
         else
         {
-            hull.layer = LayerMask.NameToLayer("SecondTrack");
+            ATK.layer = LayerMask.NameToLayer("SecondTrack");
+            COLL.layer = LayerMask.NameToLayer("SecondTrack");
         }
 
        
@@ -55,7 +58,6 @@ public class PlayerMovement : MonoBehaviour
             if (this.transform.position.y < v.y + Y / 2)
             {
                 dest = new Vector3(this.transform.position.x, this.transform.position.y + Y, 0);
-                hull.layer = LayerMask.NameToLayer("FirstTrack");
             }
         }
         if (Input.GetKeyDown(KeyCode.D))
@@ -64,7 +66,6 @@ public class PlayerMovement : MonoBehaviour
             if (this.transform.position.y > v.y - Y / 2)
             {
                 dest = new Vector3(this.transform.position.x, this.transform.position.y - Y, 0);
-                hull.layer = LayerMask.NameToLayer("ThirdTrack");
             }
         }
         transform.position = Vector3.MoveTowards(transform.position, dest, move);
