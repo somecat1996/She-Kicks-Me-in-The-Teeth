@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class EnemyBehavior : MonoBehaviour
 {
+    private Cinemachine.CinemachineCollisionImpulseSource MyInpulse;
     // Start is called before the first frame update
     void Start()
     {
-        
+        MyInpulse = GetComponent<Cinemachine.CinemachineCollisionImpulseSource>();
     }
 
     // Update is called once per frame
@@ -20,6 +21,7 @@ public class EnemyBehavior : MonoBehaviour
     {
         if (collision.tag == "Attack")
         {
+            MyInpulse.GenerateImpulse();
             Destroy(gameObject);
         }
     }
