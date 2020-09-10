@@ -28,6 +28,7 @@ public class PlayerAttack : MonoBehaviour
 
     private void Start()
     {
+        //插入动画
         animator = GetComponent<Animator>();
         animationClips = animator.runtimeAnimatorController.animationClips;
         for (int i = 0; i < animationClips.Length; i++)
