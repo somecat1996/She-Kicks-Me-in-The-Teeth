@@ -8,6 +8,7 @@ public class GameController : MonoBehaviour
 {
     public GameObject pauseUI;
     public GameObject endUI;
+    public static bool end;
     // Start is called before the first frame update
     void Start()
     {
@@ -43,11 +44,13 @@ public class GameController : MonoBehaviour
     public void OnStart()
     {
         SceneManager.LoadScene(1);
+        end = false;
     }
     // 游戏结束，由Player死亡后调用
     public void OnEnd()
     {
         endUI.SetActive(true);
+        end = true;
     }
     // 退出游戏，绑定于主菜单按键
     public void OnQuit()
