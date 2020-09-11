@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnemyBehavior : MonoBehaviour
 {
+    // 发送相机抖动事件
     private Cinemachine.CinemachineCollisionImpulseSource MyInpulse;
     // Start is called before the first frame update
     void Start()
@@ -19,6 +20,7 @@ public class EnemyBehavior : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        // 在enemy被攻击后，发送抖动
         if (collision.tag == "Attack")
         {
             MyInpulse.GenerateImpulse();

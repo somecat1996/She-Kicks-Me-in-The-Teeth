@@ -4,6 +4,7 @@ using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.UI;
 
+// 控制地图向左运动
 public class TrackController : MonoBehaviour
 {
     [Header("初始速度")]
@@ -56,7 +57,7 @@ public class TrackController : MonoBehaviour
             meterDisplay.text = "Meter: " + math.floor(meter);
         }
     }
-
+    // 最右跑道移动至相机边界时调用，产生新跑道
     public void OnCreateTrack()
     {
         GameObject newTrack = GameObject.Instantiate(Common.RandomSelect(ref tracks), Vector3.zero, Quaternion.identity, transform);
@@ -64,7 +65,7 @@ public class TrackController : MonoBehaviour
         trackNum += 1;
         newTrack.GetComponent<TrackBehavior>().CreateBlocks(level);
     }
-
+    // 游戏结束展示得分
     public void OnEnd()
     {
         end = true;

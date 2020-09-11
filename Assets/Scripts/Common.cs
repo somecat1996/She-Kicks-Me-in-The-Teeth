@@ -2,13 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// 公用函数
 public class Common : MonoBehaviour
 {
+    // 在元组中随机选取一项
     public static T RandomSelect<T>(ref T[] array)
     {
         int num = Random.Range(0, array.Length);
         return array[num];
     }
+    // 在元组中随机选取count项
     public static T[] RandomSelectArray<T>(ref T[] paramArray, int count)
     {
         if (paramArray.Length < count)
