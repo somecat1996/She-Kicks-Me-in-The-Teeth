@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.UI;
+using System.IO;
 
 public class TrackController : MonoBehaviour
 {
@@ -29,9 +30,27 @@ public class TrackController : MonoBehaviour
     private int trackNum;
 
     private bool end;
+
+    //最高分记录
+    private float score;
+    private float best = 0;
+
+    public float Best
+    {
+        get; set;
+    }
+
+    [Header("最高分文本组件")]
+    public Text bestText;
+
     // Start is called before the first frame update
     void Start()
     {
+        // 读取文件中的最高分记录
+        // 注意第一次时文本内容不能为空，否则报错
+        best = int.Parse(File.ReadAllText("Assets/Scripts/best.txt"));
+        bestText.text = "Best：" + best.ToString();
+
         rb = GetComponent<Rigidbody2D>();
         trackNum = 1;
 
@@ -55,6 +74,7 @@ public class TrackController : MonoBehaviour
             meter += velocity * Time.deltaTime;
             meterDisplay.text = "Meter: " + math.floor(meter);
         }
+        Rank();
     }
 
     public void OnCreateTrack()
@@ -71,4 +91,19 @@ public class TrackController : MonoBehaviour
         finalMeterDisplay.text = "Meter: " + math.floor(meter);
         rb.velocity = Vector2.zero;
     }
+
+    public void Rank()
+    {
+         //强制转换成int类型，防止读取数据失败
+        score = math.floor(meter);
+        //记录最高分数
+        if (score > best && end)
+        {
+            best = score;
+            bestText.text = "Best：" + best.ToString();
+            File.WriteAllText("Assets/Scripts/best.txt", best.ToString());
+        }
+    }
+
 }
+

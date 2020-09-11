@@ -7,6 +7,7 @@ public class GameController : MonoBehaviour
 {
     public GameObject pauseUI;
     public GameObject endUI;
+    public static bool end;
     // Start is called before the first frame update
     void Start()
     {
@@ -39,11 +40,13 @@ public class GameController : MonoBehaviour
     public void OnStart()
     {
         SceneManager.LoadScene(1);
+        end = false;
     }
 
     public void OnEnd()
     {
         endUI.SetActive(true);
+        end = true;
     }
 
     public void OnQuit()
