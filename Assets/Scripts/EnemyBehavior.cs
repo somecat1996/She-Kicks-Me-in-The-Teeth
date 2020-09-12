@@ -23,6 +23,7 @@ public class EnemyBehavior : MonoBehaviour
         // 在enemy被攻击后，发送抖动
         if (collision.tag == "Attack")
         {
+            Wallet.Single.AddGold(1);
             MyInpulse.GenerateImpulse();
             Destroy(gameObject);
         }
