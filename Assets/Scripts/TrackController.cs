@@ -95,7 +95,7 @@ public class TrackController : MonoBehaviour
 
     public void Rank()
     {
-         //强制转换成int类型，防止读取数据失败
+        //强制转换成int类型，防止读取数据失败
         score = math.floor(meter);
         //记录最高分数
         if (score > best && end)
