@@ -49,7 +49,7 @@ public class TrackController : MonoBehaviour
     {
         // 读取文件中的最高分记录
         // 注意第一次时文本内容不能为空，否则报错
-        best = int.Parse(File.ReadAllText("Assets/Scripts/best.txt"));
+        best = int.Parse(File.ReadAllText(Application.dataPath + "/StreamingAssets/best.txt"));
         bestText.text = "Best：" + best.ToString();
 
         rb = GetComponent<Rigidbody2D>();
@@ -77,7 +77,9 @@ public class TrackController : MonoBehaviour
         }
         Rank();
     }
-    // 最右跑道移动至相机边界时调用，产生新跑道
+    /// <summary>
+    /// 最右跑道移动至相机边界时调用，产生新跑道
+    /// </summary>
     public void OnCreateTrack()
     {
         GameObject newTrack = GameObject.Instantiate(Common.RandomSelect(ref tracks), Vector3.zero, Quaternion.identity, transform);
@@ -85,7 +87,9 @@ public class TrackController : MonoBehaviour
         trackNum += 1;
         newTrack.GetComponent<TrackBehavior>().CreateBlocks(level);
     }
-    // 游戏结束展示得分
+    /// <summary>
+    /// 游戏结束展示得分
+    /// </summary>
     public void OnEnd()
     {
         end = true;
@@ -96,7 +100,7 @@ public class TrackController : MonoBehaviour
         {
             best = score;
             bestText.text = "Best：" + best.ToString();
-            File.WriteAllText("Assets/Scripts/best.txt", best.ToString());
+            File.WriteAllText(Application.dataPath + "/StreamingAssets/best.txt", best.ToString());
         }
     }
 
