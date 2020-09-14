@@ -89,6 +89,19 @@ public class TrackController : MonoBehaviour
     public void OnEnd()
     {
         end = true;
+        rb.velocity = Vector2.zero;
+        //记录最高分数
+        score = math.floor(meter);
+        if (score > best)
+        {
+            best = score;
+            bestText.text = "Best：" + best.ToString();
+            File.WriteAllText("Assets/Scripts/best.txt", best.ToString());
+        }
+    }
+
+    public void OnDisplay()
+    {
         finalMeterDisplay.text = "Meter: " + math.floor(meter);
         rb.velocity = Vector2.zero;
     }
@@ -97,13 +110,6 @@ public class TrackController : MonoBehaviour
     {
         //强制转换成int类型，防止读取数据失败
         score = math.floor(meter);
-        //记录最高分数
-        if (score > best && end)
-        {
-            best = score;
-            bestText.text = "Best：" + best.ToString();
-            File.WriteAllText("Assets/Scripts/best.txt", best.ToString());
-        }
     }
 
 }

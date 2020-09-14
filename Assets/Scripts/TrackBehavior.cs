@@ -9,6 +9,7 @@ public class TrackBehavior : MonoBehaviour
 
     public float[] xPosition;
     public float[] yPosition;
+    public float xOffset;
 
     public GameObject[] Enemies;
     public GameObject[] Blocks;
@@ -64,7 +65,7 @@ public class TrackBehavior : MonoBehaviour
                         case 2: tmpObject.layer = LayerMask.NameToLayer("ThirdTrack"); z = -1.5f; break;
                         default: z = 0; break;
                     }
-                    tmpObject.transform.localPosition = new Vector3(x, yPosition[i], z);
+                    tmpObject.transform.localPosition = new Vector3(x + i * xOffset, yPosition[i], z);
                 }
                 else if (enemyX == x)
                 {
@@ -76,7 +77,7 @@ public class TrackBehavior : MonoBehaviour
                         case 2: tmpObject.layer = LayerMask.NameToLayer("ThirdTrack"); z = -1.5f; break;
                         default: z = 0; break;
                     }
-                    tmpObject.transform.localPosition = new Vector3(x, yPosition[i], z);
+                    tmpObject.transform.localPosition = new Vector3(x + i * xOffset, yPosition[i], z);
                 }
             }
         }

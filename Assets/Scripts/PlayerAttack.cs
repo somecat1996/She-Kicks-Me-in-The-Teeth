@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
+    public TrackController trackController;
+    public GameController gameController;
     //[Header("攻击原点")]
     //private Transform attackPosRight;
     //[Header("攻击范围")]
@@ -23,6 +25,7 @@ public class PlayerAttack : MonoBehaviour
 
     private Animator animator;
     private AnimationClip[] animationClips;
+    public RandomPlayAudio randomPlayAudio;
 
     private bool canAttack;
 
@@ -57,6 +60,8 @@ public class PlayerAttack : MonoBehaviour
             GetComponent<Stamina>().ReduceStaminaValue(staminaValue);
             //动画播放
             animator.SetTrigger("attacking");
+            //播放音效
+            randomPlayAudio.RandomPlay();
         }
     }
 
@@ -72,6 +77,12 @@ public class PlayerAttack : MonoBehaviour
         ATK.SetActive(false);
 
         canAttack = true;
+    }
+
+    public void OnGameEnd()
+    {
+        trackController.OnDisplay();
+        gameController.OnEnd();
     }
 }
 

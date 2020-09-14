@@ -5,11 +5,13 @@ using UnityEngine;
 public class EnemyBehavior : MonoBehaviour
 {
     // 发送相机抖动事件
-    private Cinemachine.CinemachineCollisionImpulseSource MyInpulse;
+    public Cinemachine.CinemachineCollisionImpulseSource MyInpulse;
+
+    public Animator anim;
     // Start is called before the first frame update
     void Start()
     {
-        MyInpulse = GetComponent<Cinemachine.CinemachineCollisionImpulseSource>();
+        
     }
 
     // Update is called once per frame
@@ -25,7 +27,12 @@ public class EnemyBehavior : MonoBehaviour
         {
             Wallet.Single.AddGold(1);
             MyInpulse.GenerateImpulse();
-            Destroy(gameObject);
+            anim.SetTrigger("Die");
         }
+    }
+
+    public void SelfDestory()
+    {
+        Destroy(gameObject);
     }
 }
