@@ -45,7 +45,7 @@ public class TrackController : MonoBehaviour
     public Text bestText;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         // 读取文件中的最高分记录
         // 注意第一次时文本内容不能为空，否则报错
