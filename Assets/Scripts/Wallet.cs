@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.IO;
 
 public class Wallet
 {
@@ -19,7 +20,7 @@ public class Wallet
 
     private Wallet()
     {
-        gold = 0;
+        gold = int.Parse(File.ReadAllText(Application.dataPath + "/StreamingAssets/wallet.txt"));
     }
 
     /// <summary>
@@ -32,6 +33,7 @@ public class Wallet
         if (value < 0)
             return false;
         gold += value;
+        File.WriteAllText(Application.dataPath + "/StreamingAssets/wallet.txt", gold.ToString());
         return true;
     }
     /// <summary>
@@ -44,7 +46,9 @@ public class Wallet
         if (value > gold)
             return false;
         gold -= value;
+        File.WriteAllText(Application.dataPath + "/StreamingAssets/wallet.txt", gold.ToString());
         return true;
     }
+
 }
 
