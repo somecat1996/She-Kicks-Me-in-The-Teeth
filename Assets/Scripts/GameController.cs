@@ -8,7 +8,8 @@ public class GameController : MonoBehaviour
 {
     public GameObject pauseUI;
     public GameObject endUI;
-    public static bool end;
+    public bool end = false;
+    public bool pause = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,17 +28,20 @@ public class GameController : MonoBehaviour
     void OnPause()
     {
         Time.timeScale = 0;
+        pause = true;
         pauseUI.SetActive(true);
     }
     // 继续游戏，绑定于暂停界面按键
     public void OnResume()
     {
+        pause = false;
         Time.timeScale = 1f;
         pauseUI.SetActive(false);
     }
     // 返回主菜单，绑定于暂停界面按键
     public void OnExit()
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene(0);
     }
     // 开始游戏，绑定于主菜单界面按键

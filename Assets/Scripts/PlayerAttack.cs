@@ -55,7 +55,7 @@ public class PlayerAttack : MonoBehaviour
         //传值
         haoWan = GetComponent<Stamina>().HaoWan;
 
-        if (canAttack&&Input.GetMouseButtonDown(0)&&!haoWan)
+        if (canAttack&&Input.GetMouseButtonDown(0) && !haoWan && !gameController.end && !gameController.pause)
         {
             GetComponent<Stamina>().ReduceStaminaValue(staminaValue);
             //动画播放
