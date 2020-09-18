@@ -1,11 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+// 管理血量，最大血量为5
 public class HealthManager : MonoBehaviour
 {
     public GameObject[] hearts;
     private int pointer;
+    // 血量初始化
     public void Initiate(int num)
     {
         pointer = num - 1;
@@ -14,7 +15,7 @@ public class HealthManager : MonoBehaviour
             hearts[i].SetActive(true);
         }
     }
-
+    // 血量+1
     public void Add()
     {
         if (pointer <= 5)
@@ -23,7 +24,7 @@ public class HealthManager : MonoBehaviour
             hearts[pointer].SetActive(true);
         }
     }
-
+    // 血量-1
     public void Sub()
     {
         if (pointer >= 0)

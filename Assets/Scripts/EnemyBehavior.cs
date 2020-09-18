@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyBehavior : MonoBehaviour
 {
-    // 发送相机抖动事件
+    // 相机震动源
     public Cinemachine.CinemachineCollisionImpulseSource MyInpulse;
 
     public Animator anim;
@@ -31,11 +31,11 @@ public class EnemyBehavior : MonoBehaviour
         {
             MyInpulse.GenerateImpulse();
             anim.SetTrigger("Die");
-
+            // 增加牙齿【货币】
             gameController.OnDefeatEnemy(value);
         }
     }
-
+    // <summary>摧毁自身</summary>
     public void SelfDestory()
     {
         Destroy(gameObject);

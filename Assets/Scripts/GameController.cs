@@ -70,7 +70,7 @@ public class GameController : MonoBehaviour
     {
         Application.Quit();
     }
-
+    // 击败敌人后增加相应数量牙齿
     public void OnDefeatEnemy(int teethNum)
     {
         Wallet.Single.AddGold(teethNum);

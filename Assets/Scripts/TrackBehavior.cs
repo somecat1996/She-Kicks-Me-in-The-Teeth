@@ -29,21 +29,24 @@ public class TrackBehavior : MonoBehaviour
     void Update()
     {
         float x = parent.TransformPoint(transform.localPosition).x;
-
+        // 跑道移出相机范围后删除
         if (x <= leftRange)
         {
             Destroy(this.gameObject);
         }
+        // 跑道移至右侧边界后产生新的跑道
         else if (x <= rightRange && !haveCreated)
         {
             trackController.OnCreateTrack();
             haveCreated = true;
         }
     }
-
+    // 产生level列的障碍
     public void CreateBlocks(int level)
     {
+        // 选择产生障碍的列
         float[] blockX = Common.RandomSelectArray(ref xPosition, level);
+        // 选择产生敌人的列
         float enemyX = Common.RandomSelect(ref blockX);
         float[] blockY;
         float z;
@@ -51,6 +54,7 @@ public class TrackBehavior : MonoBehaviour
 
         foreach (float x in blockX)
         {
+            // 选择产生障碍的行
             blockY = Common.RandomSelectArray(ref yPosition, 2);
 
             for (int i = 0; i < yPosition.Length; i++)

@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+// 游戏结束后产生自由下落的牙齿
 public class TeethCreator : MonoBehaviour
 {
     public GameObject[] teeth;

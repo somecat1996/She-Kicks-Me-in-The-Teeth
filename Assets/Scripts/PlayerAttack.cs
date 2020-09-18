@@ -77,12 +77,12 @@ public class PlayerAttack : MonoBehaviour
             }
         }
     }
-
+    // 攻击开始，通过animator event调用，激活相应collider
     public void OnAttackStart()
     {
         ATK.SetActive(true);
     }
-
+    // 一阶攻击结束，判断是否进入二阶攻击
     public void OnAttackEnd()
     {
         if (attackStage >= 2)
@@ -99,7 +99,7 @@ public class PlayerAttack : MonoBehaviour
             animator.SetInteger("Attack Stage", attackStage);
         }
     }
-
+    // 二阶攻击结束，判断是否进入三阶攻击
     public void OnAttack2End()
     {
         if (attackStage == 3)
@@ -116,20 +116,20 @@ public class PlayerAttack : MonoBehaviour
             animator.SetInteger("Attack Stage", attackStage);
         }
     }
-
+    // 三阶攻击结束，禁用collider
     public void OnAttack3End()
     {
         ATK.SetActive(false);
         attackStage = 0;
         animator.SetInteger("Attack Stage", attackStage);
     }
-
+    // 游戏结束
     public void OnGameEnd()
     {
-        trackController.OnDisplay();
+        trackController.OnEnd();
         gameController.OnEnd();
     }
-
+    // 初始动画结束后开始游戏
     public void OnGameStart()
     {
         trackController.OnStart();

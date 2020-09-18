@@ -93,7 +93,8 @@ public class TrackController : MonoBehaviour
     public void OnEnd()
     {
         end = true;
-        rb.velocity = Vector2.zero;
+        rb.velocity = Vector2.zero; 
+        finalMeterDisplay.text = "Distance: " + math.floor(meter);
         //记录最高分数
         score = math.floor(meter);
         if (score > best)
@@ -103,16 +104,12 @@ public class TrackController : MonoBehaviour
             File.WriteAllText(Application.dataPath + "/StreamingAssets/best.txt", best.ToString());
         }
     }
-
+    /// <summary>
+    /// 游戏开始
+    /// </summary>
     public void OnStart()
     {
         end = false;
-    }
-
-    public void OnDisplay()
-    {
-        finalMeterDisplay.text = "Distance: " + math.floor(meter);
-        rb.velocity = Vector2.zero;
     }
 
     public void Rank()
