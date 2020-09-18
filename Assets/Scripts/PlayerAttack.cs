@@ -27,13 +27,14 @@ public class PlayerAttack : MonoBehaviour
     private AnimationClip[] animationClips;
     public RandomPlayAudio randomPlayAudio;
 
-    private bool canAttack;
+    private int attackStage;
 
     private void Start()
     {
         //插入动画
         animator = GetComponent<Animator>();
         animationClips = animator.runtimeAnimatorController.animationClips;
+
         for (int i = 0; i < animationClips.Length; i++)
         {
             if (animationClips[i].name == "PlayerAttack")
@@ -46,7 +47,7 @@ public class PlayerAttack : MonoBehaviour
             }
         }
 
-        canAttack = true;
+        attackStage = 0;
     }
 
     // Update is called once per frame
@@ -55,34 +56,83 @@ public class PlayerAttack : MonoBehaviour
         //传值
         haoWan = GetComponent<Stamina>().HaoWan;
 
-        if (canAttack&&Input.GetMouseButtonDown(0) && !haoWan && !gameController.end && !gameController.pause)
+        if (Input.GetMouseButtonDown(0) && !haoWan && !gameController.end && !gameController.pause)
         {
-            GetComponent<Stamina>().ReduceStaminaValue(staminaValue);
-            //动画播放
-            animator.SetTrigger("attacking");
-            //播放音效
-            randomPlayAudio.RandomPlay();
+            if (attackStage == 0)
+            {
+                GetComponent<Stamina>().ReduceStaminaValue(staminaValue);
+                //动画播放
+                attackStage = 1;
+                animator.SetInteger("Attack Stage", attackStage);
+                //播放音效
+                randomPlayAudio.RandomPlay();
+            }
+            else if (attackStage == 1)
+            {
+                attackStage = 2;
+            }
+            else if (attackStage == 2)
+            {
+                attackStage = 3;
+            }
         }
     }
 
     public void OnAttackStart()
     {
         ATK.SetActive(true);
-
-        canAttack = false;
     }
 
     public void OnAttackEnd()
     {
-        ATK.SetActive(false);
+        if (attackStage >= 2)
+        {
+            GetComponent<Stamina>().ReduceStaminaValue(staminaValue);
+            animator.SetInteger("Attack Stage", 2);
+            //播放音效
+            randomPlayAudio.RandomPlay();
+        }
+        else
+        {
+            ATK.SetActive(false);
+            attackStage = 0;
+            animator.SetInteger("Attack Stage", attackStage);
+        }
+    }
 
-        canAttack = true;
+    public void OnAttack2End()
+    {
+        if (attackStage == 3)
+        {
+            GetComponent<Stamina>().ReduceStaminaValue(staminaValue);
+            animator.SetInteger("Attack Stage", attackStage);
+            //播放音效
+            randomPlayAudio.RandomPlay();
+        }
+        else
+        {
+            ATK.SetActive(false);
+            attackStage = 0;
+            animator.SetInteger("Attack Stage", attackStage);
+        }
+    }
+
+    public void OnAttack3End()
+    {
+        ATK.SetActive(false);
+        attackStage = 0;
+        animator.SetInteger("Attack Stage", attackStage);
     }
 
     public void OnGameEnd()
     {
         trackController.OnDisplay();
         gameController.OnEnd();
+    }
+
+    public void OnGameStart()
+    {
+        trackController.OnStart();
     }
 }
 

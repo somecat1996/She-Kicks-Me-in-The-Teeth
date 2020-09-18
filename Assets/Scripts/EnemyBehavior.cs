@@ -8,10 +8,14 @@ public class EnemyBehavior : MonoBehaviour
     public Cinemachine.CinemachineCollisionImpulseSource MyInpulse;
 
     public Animator anim;
+
+    public int value = 1;
+
+    private GameController gameController;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        
+        gameController = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
     }
 
     // Update is called once per frame
@@ -25,9 +29,10 @@ public class EnemyBehavior : MonoBehaviour
         // 在enemy被攻击后，发送抖动
         if (collision.tag == "Attack")
         {
-            Wallet.Single.AddGold(1);
             MyInpulse.GenerateImpulse();
             anim.SetTrigger("Die");
+
+            gameController.OnDefeatEnemy(value);
         }
     }
 

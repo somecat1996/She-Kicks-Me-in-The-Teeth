@@ -58,7 +58,7 @@ public class TrackController : MonoBehaviour
         meter = 0;
         meterDisplay.text = "Meter: " + math.floor(meter);
 
-        end = false;
+        end = true;
     }
 
     // Update is called once per frame
@@ -102,6 +102,11 @@ public class TrackController : MonoBehaviour
             bestText.text = "Best：" + best.ToString();
             File.WriteAllText(Application.dataPath + "/StreamingAssets/best.txt", best.ToString());
         }
+    }
+
+    public void OnStart()
+    {
+        end = false;
     }
 
     public void OnDisplay()

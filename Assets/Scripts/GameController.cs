@@ -8,12 +8,16 @@ public class GameController : MonoBehaviour
 {
     public GameObject pauseUI;
     public GameObject endUI;
+    public GameObject mask;
+    public GameObject teethUI;
     public bool end = false;
     public bool pause = false;
+
+    private int teeth;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        
+        teeth = 0;
     }
 
     // Update is called once per frame
@@ -30,6 +34,7 @@ public class GameController : MonoBehaviour
         Time.timeScale = 0;
         pause = true;
         pauseUI.SetActive(true);
+        mask.SetActive(true);
     }
     // 继续游戏，绑定于暂停界面按键
     public void OnResume()
@@ -37,6 +42,7 @@ public class GameController : MonoBehaviour
         pause = false;
         Time.timeScale = 1f;
         pauseUI.SetActive(false);
+        mask.SetActive(false);
     }
     // 返回主菜单，绑定于暂停界面按键
     public void OnExit()
@@ -54,11 +60,20 @@ public class GameController : MonoBehaviour
     public void OnEnd()
     {
         endUI.SetActive(true);
+        mask.SetActive(true);
         end = true;
+        teethUI.SetActive(true);
+        teethUI.GetComponent<TeethCreator>().SetTeethNumber(teeth);
     }
     // 退出游戏，绑定于主菜单按键
     public void OnQuit()
     {
         Application.Quit();
+    }
+
+    public void OnDefeatEnemy(int teethNum)
+    {
+        Wallet.Single.AddGold(teethNum);
+        teeth += teethNum;
     }
 }
