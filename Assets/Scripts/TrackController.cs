@@ -56,7 +56,7 @@ public class TrackController : MonoBehaviour
         trackNum = 1;
 
         meter = 0;
-        meterDisplay.text = "Meter: " + math.floor(meter);
+        meterDisplay.text = "Distance: " + math.floor(meter);
 
         end = true;
     }
@@ -73,7 +73,7 @@ public class TrackController : MonoBehaviour
             }
 
             meter += velocity * Time.deltaTime;
-            meterDisplay.text = "Meter: " + math.floor(meter);
+            meterDisplay.text = "Distance: " + math.floor(meter);
         }
         Rank();
     }
@@ -111,7 +111,7 @@ public class TrackController : MonoBehaviour
 
     public void OnDisplay()
     {
-        finalMeterDisplay.text = "Meter: " + math.floor(meter);
+        finalMeterDisplay.text = "Distance: " + math.floor(meter);
         rb.velocity = Vector2.zero;
     }
 
