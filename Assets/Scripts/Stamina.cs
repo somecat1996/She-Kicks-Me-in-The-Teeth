@@ -93,14 +93,14 @@ public class Stamina : MonoBehaviour
     // 持续回复耐力
     IEnumerator ReplyStamina()
     {
-            if (isReply)
-            {
-                if (staminaValue >= maxStaminaValue)
-                    staminaValue = maxStaminaValue;
-                else
-                    staminaValue += secStaminaValue / 100;
-                staminaImage.fillAmount = staminaValue / maxStaminaValue;
-            }
-            yield return new WaitForSeconds(0.01f);
+        if (isReply)
+        {
+            if (staminaValue >= maxStaminaValue)
+                staminaValue = maxStaminaValue;
+            else
+                staminaValue += secStaminaValue / 100;
+            staminaImage.fillAmount = staminaValue / maxStaminaValue;
+        }
+        yield return new WaitForSeconds(0.01f);
     }
 }

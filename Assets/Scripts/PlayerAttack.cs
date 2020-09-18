@@ -56,7 +56,7 @@ public class PlayerAttack : MonoBehaviour
         //传值
         haoWan = GetComponent<Stamina>().HaoWan;
 
-        if (Input.GetMouseButtonDown(0) && !haoWan && !gameController.end && !gameController.pause)
+        if (!gameController.end && Input.GetMouseButtonDown(0) && !haoWan && !gameController.end && !gameController.pause)
         {
             if (attackStage == 0)
             {
