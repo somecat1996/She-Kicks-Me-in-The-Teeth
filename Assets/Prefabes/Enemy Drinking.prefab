@@ -225,4 +225,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MyInpulse: {fileID: 4256261592863739776}
   anim: {fileID: 5027864753445371563}
-  probability: 60
+  probability: 50

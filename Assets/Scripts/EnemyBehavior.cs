@@ -49,7 +49,6 @@ public class EnemyBehavior : MonoBehaviour
             if (rd<= probability)
             {
                 int value1 = 2;
-                Debug.Log(value1);
                 gameController.OnDefeatEnemy(value1);
             }
             else
