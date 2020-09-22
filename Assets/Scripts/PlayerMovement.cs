@@ -20,6 +20,8 @@ public class PlayerMovement : MonoBehaviour
     public GameObject COLL;
     [Header("攻击判断框")]
     public GameObject ATK;
+    [Header("防御判断框")]
+    public GameObject DEF;
 
     // Start is called before the first frame update
     void Start()
@@ -37,16 +39,19 @@ public class PlayerMovement : MonoBehaviour
             {
                 ATK.layer = LayerMask.NameToLayer("FirstTrack");
                 COLL.layer = LayerMask.NameToLayer("FirstTrack");
+                DEF.layer = LayerMask.NameToLayer("FirstTrack");
             }
             else if (this.transform.position.y < v.y - Y / 2)
             {
                 ATK.layer = LayerMask.NameToLayer("ThirdTrack");
                 COLL.layer = LayerMask.NameToLayer("ThirdTrack");
+                DEF.layer = LayerMask.NameToLayer("ThirdTrack");
             }
             else
             {
                 ATK.layer = LayerMask.NameToLayer("SecondTrack");
                 COLL.layer = LayerMask.NameToLayer("SecondTrack");
+                DEF.layer = LayerMask.NameToLayer("SecondTrack");
             }
 
        

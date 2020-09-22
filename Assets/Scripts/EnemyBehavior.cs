@@ -9,7 +9,8 @@ public class EnemyBehavior : MonoBehaviour
 
     public Animator anim;
 
-    public int value = 1;
+    [Header("芭蕾舞爷爷击打掉落两颗牙齿几率")]
+    public float probability;
 
     private GameController gameController;
     // Start is called before the first frame update
@@ -26,13 +27,38 @@ public class EnemyBehavior : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        // 在enemy被攻击后，发送抖动
+        
         if (collision.tag == "Attack")
+        {
+            //牙齿掉落
+            int value0=1;
+            // 在enemy被攻击后，发送抖动
+            MyInpulse.GenerateImpulse();
+            // 播放动画
+            anim.SetTrigger("Die");
+            // 增加牙齿【货币】
+            gameController.OnDefeatEnemy(value0);
+        }
+        //如果是芭蕾舞爷爷则有几率掉落更多牙齿，其攻击框Tag为Attack1
+        else if (collision.tag == "Attack1")
         {
             MyInpulse.GenerateImpulse();
             anim.SetTrigger("Die");
-            // 增加牙齿【货币】
-            gameController.OnDefeatEnemy(value);
+            // 增加更多牙齿【货币】
+            int rd = Random.Range(0, 100);
+            if (rd<= probability)
+            {
+                int value1 = 2;
+                Debug.Log(value1);
+                gameController.OnDefeatEnemy(value1);
+            }
+            else
+            {
+                int value2 = 1;
+                Debug.Log(value2);
+                gameController.OnDefeatEnemy(value2);
+            }
+            
         }
     }
     // <summary>摧毁自身</summary>

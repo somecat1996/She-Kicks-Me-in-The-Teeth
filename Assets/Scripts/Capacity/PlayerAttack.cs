@@ -6,12 +6,6 @@ public class PlayerAttack : MonoBehaviour
 {
     public TrackController trackController;
     public GameController gameController;
-    //[Header("攻击原点")]
-    //private Transform attackPosRight;
-    //[Header("攻击范围")]
-    //public float attackRange;
-    //[Header("敌人所在图层")]
-    //public LayerMask whatIsEnemies;
     [Header("攻击判断框")]
     public GameObject ATK;
     [Header("攻击伤害")]
