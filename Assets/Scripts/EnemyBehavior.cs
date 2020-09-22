@@ -55,7 +55,6 @@ public class EnemyBehavior : MonoBehaviour
             else
             {
                 int value2 = 1;
-                Debug.Log(value2);
                 gameController.OnDefeatEnemy(value2);
             }
             
