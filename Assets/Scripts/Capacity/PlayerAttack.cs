@@ -127,6 +127,7 @@ public class PlayerAttack : MonoBehaviour
     public void OnGameStart()
     {
         trackController.OnStart();
+        gameController.OnRun();
     }
 }
 

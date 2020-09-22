@@ -10,7 +10,7 @@ public class GameController : MonoBehaviour
     public GameObject endUI;
     public GameObject mask;
     public GameObject teethUI;
-    public bool end = false;
+    public bool end;
     public bool pause = false;
 
     private int teeth;
@@ -18,6 +18,7 @@ public class GameController : MonoBehaviour
     void Awake()
     {
         teeth = 0;
+        end = true;
     }
 
     // Update is called once per frame
@@ -54,6 +55,11 @@ public class GameController : MonoBehaviour
     public void OnStart()
     {
         SceneManager.LoadScene(1);
+    }
+
+    public void OnRun()
+    {
+
         end = false;
     }
     // 游戏结束，由Player死亡后调用
