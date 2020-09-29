@@ -10,7 +10,7 @@ public class EnemyBehavior : MonoBehaviour
     public Animator anim;
 
     [Header("芭蕾舞爷爷击打掉落两颗牙齿几率")]
-    public float probability;
+    public float probability=50;
 
     private GameController gameController;
     // Start is called before the first frame update
