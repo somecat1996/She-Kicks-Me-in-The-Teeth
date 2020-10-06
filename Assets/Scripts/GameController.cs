@@ -54,7 +54,7 @@ public class GameController : MonoBehaviour
     // 开始游戏，绑定于主菜单界面按键
     public void OnStart()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(SelectCharacter());
     }
 
     public void OnRun()
@@ -81,5 +81,15 @@ public class GameController : MonoBehaviour
     {
         Wallet.Single.AddGold(teethNum);
         teeth += teethNum;
+    }
+    // 设置角色，根据角色加载场景
+    private int SelectCharacter()
+    {
+        switch (PlayerPrefs.GetString("Selected"))
+        {
+            case "Grandma": return 1;
+            case "Grandpa": return 2;
+            default: PlayerPrefs.SetString("Selected", "Grandma"); return 1;
+        }
     }
 }
