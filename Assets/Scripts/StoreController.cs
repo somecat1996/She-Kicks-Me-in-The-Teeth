@@ -6,7 +6,8 @@ public class StoreController : MonoBehaviour
 {
     public Animator grandmaButtonAnimator;
     public Animator grandpaButtonAnimator;
-    //public Animator auntieButtonAnimator;
+    public Animator auntieButtonAnimator;
+    public Animator girlButtonAnimator;
 
     // Start is called before the first frame update
     void Start()
@@ -33,18 +34,29 @@ public class StoreController : MonoBehaviour
         }
 
 
-        //switch (PlayerPrefs.GetInt("Auntie"))
-        //{
-        //    case 0: PlayerPrefs.SetInt("Auntie", 1); break;
-        //    case 1: break;
-        //    case 2: auntieButtonAnimator.SetBool("Bought", true); break;
-        //    default: PlayerPrefs.SetInt("Auntie", 1); break;
-        //}
+        switch (PlayerPrefs.GetInt("Auntie"))
+        {
+            case 0: PlayerPrefs.SetInt("Auntie", 1); break;
+            case 1: break;
+            case 2: auntieButtonAnimator.SetBool("Bought", true); break;
+            default: PlayerPrefs.SetInt("Auntie", 1); break;
+        }
+
+
+        switch (PlayerPrefs.GetInt("Girl"))
+        {
+            case 0: PlayerPrefs.SetInt("Girl", 1); break;
+            case 1: break;
+            case 2: girlButtonAnimator.SetBool("Bought", true); break;
+            default: PlayerPrefs.SetInt("Girl", 1); break;
+        }
 
         switch (PlayerPrefs.GetString("Selected"))
         {
             case "Grandma": grandmaButtonAnimator.SetBool("Check", true); break;
             case "Grandpa": grandpaButtonAnimator.SetBool("Check", true); break;
+            case "Auntie": auntieButtonAnimator.SetBool("Check", true); break;
+            case "Girl": girlButtonAnimator.SetBool("Check", true); break;
             default: grandmaButtonAnimator.SetBool("Check", true); PlayerPrefs.SetString("Selected", "Grandma"); break;
         }
     }
@@ -61,6 +73,8 @@ public class StoreController : MonoBehaviour
         {
             case "Grandma": break;
             case "Grandpa": PlayerPrefs.SetInt("Grandpa", 2); grandpaButtonAnimator.SetBool("Bought", true); Wallet.Single.RemoveGold(100); break;
+            case "Auntie": PlayerPrefs.SetInt("Auntie", 2); auntieButtonAnimator.SetBool("Bought", true); Wallet.Single.RemoveGold(500);; break;
+            case "Girl": PlayerPrefs.SetInt("Girl", 2); girlButtonAnimator.SetBool("Bought", true); Wallet.Single.RemoveGold(1000);; break;
             default: break;
         }
         OnSelect(name);
@@ -73,6 +87,8 @@ public class StoreController : MonoBehaviour
         {
             case "Grandma": PlayerPrefs.SetString("Selected", "Grandma"); grandmaButtonAnimator.SetBool("Check", true); break;
             case "Grandpa": PlayerPrefs.SetString("Selected", "Grandpa"); grandpaButtonAnimator.SetBool("Check", true); break;
+            case "Auntie": PlayerPrefs.SetString("Selected", "Auntie"); auntieButtonAnimator.SetBool("Check", true); break;
+            case "Girl": PlayerPrefs.SetString("Selected", "Girl"); girlButtonAnimator.SetBool("Check", true); break;
             default: break;
         }
     }
@@ -83,6 +99,8 @@ public class StoreController : MonoBehaviour
         {
             case "Grandma": grandmaButtonAnimator.SetBool("Check", false); break;
             case "Grandpa": grandpaButtonAnimator.SetBool("Check", false); break;
+            case "Auntie": auntieButtonAnimator.SetBool("Check", false); break;
+            case "Girl": girlButtonAnimator.SetBool("Check", false); break;
             default: break;
         }
     }
@@ -101,6 +119,10 @@ public class StoreController : MonoBehaviour
     {
         PlayerPrefs.SetInt("Grandma", 2);
         PlayerPrefs.SetInt("Grandpa", 1);
+        PlayerPrefs.SetInt("Auntie", 1);
+        PlayerPrefs.SetInt("Girl", 1);
         PlayerPrefs.SetString("Selected", "Grandma");
     }
+
+
 }

@@ -89,6 +89,8 @@ public class GameController : MonoBehaviour
         {
             case "Grandma": return 1;
             case "Grandpa": return 2;
+            case "Auntie": return 3;
+            case "Girl": return 3;
             default: PlayerPrefs.SetString("Selected", "Grandma"); return 1;
         }
     }
