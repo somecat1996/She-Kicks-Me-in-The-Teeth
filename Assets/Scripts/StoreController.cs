@@ -9,6 +9,8 @@ public class StoreController : MonoBehaviour
     public Animator auntieButtonAnimator;
     public Animator girlButtonAnimator;
 
+    public TextAlter money;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -72,12 +74,44 @@ public class StoreController : MonoBehaviour
         switch (name)
         {
             case "Grandma": break;
-            case "Grandpa": PlayerPrefs.SetInt("Grandpa", 2); grandpaButtonAnimator.SetBool("Bought", true); Wallet.Single.RemoveGold(100); break;
-            case "Auntie": PlayerPrefs.SetInt("Auntie", 2); auntieButtonAnimator.SetBool("Bought", true); Wallet.Single.RemoveGold(500);; break;
-            case "Girl": PlayerPrefs.SetInt("Girl", 2); girlButtonAnimator.SetBool("Bought", true); Wallet.Single.RemoveGold(1000);; break;
+            case "Grandpa":
+                if (Wallet.Single.RemoveGold(100))
+                {
+                    PlayerPrefs.SetInt("Grandpa", 2);
+                    grandpaButtonAnimator.SetBool("Bought", true);
+                    OnSelect(name);
+                }
+                else
+                {
+                    StartCoroutine(money.Alter());
+                }
+                break;
+            case "Auntie":
+                if (Wallet.Single.RemoveGold(500))
+                {
+                    PlayerPrefs.SetInt("Auntie", 2); 
+                    auntieButtonAnimator.SetBool("Bought", true);
+                    OnSelect(name);
+                }
+                else
+                {
+                    StartCoroutine(money.Alter());
+                }
+                break;
+            case "Girl":
+                if (Wallet.Single.RemoveGold(1000))
+                {
+                    PlayerPrefs.SetInt("Girl", 2);
+                    girlButtonAnimator.SetBool("Bought", true);
+                    OnSelect(name);
+                }
+                else
+                {
+                    StartCoroutine(money.Alter());
+                }
+                break; 
             default: break;
         }
-        OnSelect(name);
     }
 
     private void OnSelect(string name)
