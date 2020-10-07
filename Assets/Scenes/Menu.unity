@@ -1313,7 +1313,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 100
+  m_Text: 1000
 --- !u!222 &352590031
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1850,7 +1850,8 @@ MonoBehaviour:
   grandmaButtonAnimator: {fileID: 438078337}
   grandpaButtonAnimator: {fileID: 1157126232}
   auntieButtonAnimator: {fileID: 56631953}
-  girlButtonAnimator: {fileID: 0}
+  girlButtonAnimator: {fileID: 1473904941}
+  money: {fileID: 1089254662}
 --- !u!4 &816132750
 Transform:
   m_ObjectHideFlags: 0
@@ -2358,7 +2359,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 100
+  m_Text: 500
 --- !u!222 &946900309
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2512,6 +2513,7 @@ GameObject:
   - component: {fileID: 1089254661}
   - component: {fileID: 1089254660}
   - component: {fileID: 1089254659}
+  - component: {fileID: 1089254662}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -2579,6 +2581,19 @@ RectTransform:
   m_AnchoredPosition: {x: -195.1, y: 144.81}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1089254662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1089254658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a75f42b7b9b4c6a4486c3b9451196007, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 1089254659}
 --- !u!1 &1091759100
 GameObject:
   m_ObjectHideFlags: 0
@@ -3403,7 +3418,7 @@ Animator:
   m_GameObject: {fileID: 1473904939}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 840b1cabb8b15ea48a7cb8c1d915340d, type: 2}
+  m_Controller: {fileID: 9100000, guid: 3ac9c17d5cd836844b252c25e02edcfd, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -3485,7 +3500,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -8592729780505054274, guid: 45e542e16544fbf4792320d1c096a205,
+  m_Sprite: {fileID: -7777177641172106769, guid: 370c7267f746f874d9c39a3e7d9b5de0,
     type: 3}
   m_Type: 0
   m_PreserveAspect: 0
