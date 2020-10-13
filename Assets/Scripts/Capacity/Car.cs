@@ -4,18 +4,20 @@ using UnityEngine;
 
 public class Car : MonoBehaviour
 {
+    public GameController gameController;
+
     public Animator anim;
 
     public bool drive;
     public bool save;
     public bool key;
 
-    [Header("技能CD")]
-    public float CD;
-    private float startCD;
 
     [Header("开车所需消耗的耐力值")]
     public float staminaValue;
+
+    [Header("撞击路人得到牙齿量")]
+    public int value0;
 
     private bool haoWan;
 
@@ -23,36 +25,18 @@ public class Car : MonoBehaviour
     {
         //开车的布尔值
         drive = false;
-        save=false;
-
-        //时间重置
-        startCD = CD;
     }
     private void Update()
     {
         //传值
         haoWan = GetComponent<Stamina>().HaoWan;
 
-        //技能冷却计算
-        if (!save&&CD>=0)
-        {
-            CD -= Time.deltaTime;
-        }
-        else if (CD<0)
-        {
-            //CD重置
-            CD = startCD;
-            
-            //防止CD开始计算
-            save = true;
-        }
-
         if (Input.GetMouseButtonDown(0))
         {
             key = true;
         }
 
-        if (key&&save)
+        if (key&&!haoWan)
         {
             drive = true;
             GetComponent<Stamina>().ReduceStaminaValue(staminaValue);
@@ -65,7 +49,6 @@ public class Car : MonoBehaviour
         {
             drive = false;
             key = false;
-            save = false;
             anim.SetBool("Drive", false);
         }      
     }
@@ -79,6 +62,7 @@ public class Car : MonoBehaviour
         if (collision.tag == "Enemy" && drive)
         {
             Destroy(collision.gameObject);
+            gameController.OnDefeatEnemy(value0);
         }
     }
 }

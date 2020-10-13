@@ -398,11 +398,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 844feeb44a0ba064b865cd68eca75a3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameController: {fileID: 0}
   anim: {fileID: 2045102203587132804}
   drive: 0
   save: 0
-  CD: 3
-  last: 5
+  key: 0
+  staminaValue: 0.1
+  value0: 0
 --- !u!114 &5459320193212570601
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -410,7 +412,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2045102203549632600}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: de901f8e6f243af45b37a6b4d6e2753f, type: 3}
   m_Name: 
@@ -418,7 +420,7 @@ MonoBehaviour:
   maxStaminaValue: 100
   staminaImage: {fileID: 0}
   stamina: {fileID: 0}
-  timer: 0.5
+  timer: 5
   secStaminaValue: 40
   HaoWan: 0
 --- !u!1 &2045102203587132805
@@ -432,6 +434,7 @@ GameObject:
   - component: {fileID: 2045102203587132800}
   - component: {fileID: 2045102203587132801}
   - component: {fileID: 2045102203587132804}
+  - component: {fileID: 2045102201959862649}
   m_Layer: 0
   m_Name: Player Anim3
   m_TagString: Untagged
@@ -523,6 +526,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &2045102201959862649
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2045102203587132805}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c474f768fbdd85346a671983665fec26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trackController: {fileID: 0}
+  gameController: {fileID: 0}
 --- !u!1 &2045102203930719417
 GameObject:
   m_ObjectHideFlags: 0

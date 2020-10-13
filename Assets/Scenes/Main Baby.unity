@@ -4636,6 +4636,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2045102201959862649, guid: b664b99e19bfeb44293fa67fb8be292a,
+        type: 3}
+      propertyPath: trackController
+      value: 
+      objectReference: {fileID: 863317386}
+    - target: {fileID: 2045102201959862649, guid: b664b99e19bfeb44293fa67fb8be292a,
+        type: 3}
+      propertyPath: gameController
+      value: 
+      objectReference: {fileID: 253452752}
     - target: {fileID: 2045102203493713982, guid: b664b99e19bfeb44293fa67fb8be292a,
         type: 3}
       propertyPath: trackController
@@ -4653,9 +4663,9 @@ PrefabInstance:
       objectReference: {fileID: 359373241}
     - target: {fileID: 2045102203838797280, guid: b664b99e19bfeb44293fa67fb8be292a,
         type: 3}
-      propertyPath: staminaValue
-      value: 0.1
-      objectReference: {fileID: 0}
+      propertyPath: gameController
+      value: 
+      objectReference: {fileID: 253452752}
     - target: {fileID: 2045102203930719399, guid: b664b99e19bfeb44293fa67fb8be292a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4731,35 +4741,5 @@ PrefabInstance:
       propertyPath: stamina
       value: 
       objectReference: {fileID: 154076005}
-    - target: {fileID: 5459320193212570601, guid: b664b99e19bfeb44293fa67fb8be292a,
-        type: 3}
-      propertyPath: timer
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5459320193212570601, guid: b664b99e19bfeb44293fa67fb8be292a,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b664b99e19bfeb44293fa67fb8be292a, type: 3}
---- !u!1 &2045102201959862648 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2045102203587132805, guid: b664b99e19bfeb44293fa67fb8be292a,
-    type: 3}
-  m_PrefabInstance: {fileID: 2045102201959862647}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2045102201959862649
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2045102201959862648}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c474f768fbdd85346a671983665fec26, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  trackController: {fileID: 863317386}
-  gameController: {fileID: 253452752}
