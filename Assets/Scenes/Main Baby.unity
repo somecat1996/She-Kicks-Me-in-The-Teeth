@@ -4661,11 +4661,36 @@ PrefabInstance:
       propertyPath: healthManager
       value: 
       objectReference: {fileID: 359373241}
+    - target: {fileID: 2045102203549632581, guid: b664b99e19bfeb44293fa67fb8be292a,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: 0.380054
+      objectReference: {fileID: 0}
+    - target: {fileID: 2045102203549632581, guid: b664b99e19bfeb44293fa67fb8be292a,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: 0.06417632
+      objectReference: {fileID: 0}
+    - target: {fileID: 2045102203549632581, guid: b664b99e19bfeb44293fa67fb8be292a,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 2.5283527
+      objectReference: {fileID: 0}
+    - target: {fileID: 2045102203549632581, guid: b664b99e19bfeb44293fa67fb8be292a,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 3.1201081
+      objectReference: {fileID: 0}
     - target: {fileID: 2045102203838797280, guid: b664b99e19bfeb44293fa67fb8be292a,
         type: 3}
       propertyPath: gameController
       value: 
       objectReference: {fileID: 253452752}
+    - target: {fileID: 2045102203838797280, guid: b664b99e19bfeb44293fa67fb8be292a,
+        type: 3}
+      propertyPath: value0
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2045102203930719399, guid: b664b99e19bfeb44293fa67fb8be292a,
         type: 3}
       propertyPath: m_LocalPosition.x
