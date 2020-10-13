@@ -4,45 +4,81 @@ using UnityEngine;
 
 public class Car : MonoBehaviour
 {
-    public bool drive;
+    public Animator anim;
 
+    public bool drive;
+    public bool save;
+    public bool key;
+
+    [Header("技能CD")]
     public float CD;
     private float startCD;
 
-    public float last;
-    private float startLast;
+    [Header("开车所需消耗的耐力值")]
+    public float staminaValue;
+
+    private bool haoWan;
 
     private void Start()
     {
+        //开车的布尔值
         drive = false;
-        startCD = CD;
+        save=false;
 
-        startLast = last;
+        //时间重置
+        startCD = CD;
     }
-    //技能冷却计算
     private void Update()
     {
-        if (!drive&&CD>=0)
+        //传值
+        haoWan = GetComponent<Stamina>().HaoWan;
+
+        //技能冷却计算
+        if (!save&&CD>=0)
         {
             CD -= Time.deltaTime;
         }
         else if (CD<0)
         {
-            drive = true;
+            //CD重置
             CD = startCD;
+            
+            //防止CD开始计算
+            save = true;
         }
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            key = true;
+        }
+
+        if (key&&save)
+        {
+            drive = true;
+            GetComponent<Stamina>().ReduceStaminaValue(staminaValue);
+
+            anim.SetBool("Drive", true);
+        }
+
+        Debug.Log(haoWan);
+        if (haoWan)
+        {
+            drive = false;
+            key = false;
+            save = false;
+            anim.SetBool("Drive", false);
+        }      
     }
     //开车冲刺
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Block"&&drive && last >= 0)
+        if (collision.tag == "Block"&&drive)
         {
             Destroy(collision.gameObject);
-            last -= Time.deltaTime;
         }
-        else if(collision.tag == "Block" && !drive && last < 0)
+        if (collision.tag == "Enemy" && drive)
         {
-            last = startLast;
+            Destroy(collision.gameObject);
         }
     }
 }

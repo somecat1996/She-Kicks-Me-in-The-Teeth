@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerAttack : MonoBehaviour
+public class Attack : MonoBehaviour
 {
     public TrackController trackController;
     public GameController gameController;
@@ -21,7 +21,7 @@ public class PlayerAttack : MonoBehaviour
     private AnimationClip[] animationClips;
     public RandomPlayAudio randomPlayAudio;
 
-    private int attackStage;
+    //private int attackStage;
 
     private void Start()
     {
@@ -41,82 +41,35 @@ public class PlayerAttack : MonoBehaviour
             }
         }
 
-        attackStage = 0;
+        //attackStage = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
         //传值
-        haoWan = GetComponent<Stamina1>().HaoWan;
+        haoWan = GetComponent<Stamina>().HaoWan;
 
         if (!gameController.end && Input.GetMouseButtonDown(0) && !haoWan && !gameController.end && !gameController.pause)
         {
-            if (attackStage == 0)
-            {
-                GetComponent<Stamina1>().ReduceStaminaValue(staminaValue);
+                GetComponent<Stamina>().ReduceStaminaValue(staminaValue);
                 //动画播放
-                attackStage = 1;
-                animator.SetInteger("Attack Stage", attackStage);
+                animator.SetTrigger("Attack");
                 //播放音效
                 randomPlayAudio.RandomPlay();
-            }
-            else if (attackStage == 1)
-            {
-                attackStage = 2;
-            }
-            else if (attackStage == 2)
-            {
-                attackStage = 3;
-            }
         }
     }
-    // 攻击开始，通过animator event调用，激活相应collider
+    //攻击开始，通过animator event调用，激活相应collider
     public void OnAttackStart()
     {
         ATK.SetActive(true);
     }
-    // 一阶攻击结束，判断是否进入二阶攻击
+    // 一阶攻击结束
     public void OnAttackEnd()
     {
-        if (attackStage >= 2)
-        {
-            GetComponent<Stamina1>().ReduceStaminaValue(staminaValue);
-            animator.SetInteger("Attack Stage", 2);
-            //播放音效
-            randomPlayAudio.RandomPlay();
-        }
-        else
-        {
-            ATK.SetActive(false);
-            attackStage = 0;
-            animator.SetInteger("Attack Stage", attackStage);
-        }
-    }
-    // 二阶攻击结束，判断是否进入三阶攻击
-    public void OnAttack2End()
-    {
-        if (attackStage == 3)
-        {
-            GetComponent<Stamina1>().ReduceStaminaValue(staminaValue);
-            animator.SetInteger("Attack Stage", attackStage);
-            //播放音效
-            randomPlayAudio.RandomPlay();
-        }
-        else
-        {
-            ATK.SetActive(false);
-            attackStage = 0;
-            animator.SetInteger("Attack Stage", attackStage);
-        }
-    }
-    // 三阶攻击结束，禁用collider
-    public void OnAttack3End()
-    {
         ATK.SetActive(false);
-        attackStage = 0;
-        animator.SetInteger("Attack Stage", attackStage);
     }
+
     // 游戏结束
     public void OnGameEnd()
     {
