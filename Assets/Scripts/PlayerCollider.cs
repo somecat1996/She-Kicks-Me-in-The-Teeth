@@ -5,6 +5,8 @@ using UnityEngine;
 public class PlayerCollider : MonoBehaviour
 {
     public TrackController trackController;
+    public SimpleTrackController foregroundController;
+    public SimpleTrackController backgroundController;
     public GameController gameController;
     [Header("角色血量")]
     public int healthPoint;
@@ -57,6 +59,8 @@ public class PlayerCollider : MonoBehaviour
                 animator.SetTrigger("die");
                 // 停止场景移动
                 trackController.OnEnd();
+                foregroundController.OnEnd();
+                backgroundController.OnEnd();
             }
         }
     }

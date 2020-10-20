@@ -8,6 +8,7 @@ public class StoreController : MonoBehaviour
     public Animator grandpaButtonAnimator;
     public Animator auntieButtonAnimator;
     public Animator girlButtonAnimator;
+    public Animator babyButtonAnimator;
 
     public TextAlter money;
 
@@ -15,7 +16,7 @@ public class StoreController : MonoBehaviour
     void Start()
     {
         // 完全初始化，清除所有购买记录
-        ResetStore();
+        // ResetStore();
         // 初始化商店
         // 0 -- 未设置，1 -- 未购买，2 -- 已购买
         switch (PlayerPrefs.GetInt("Grandma"))
@@ -53,12 +54,22 @@ public class StoreController : MonoBehaviour
             default: PlayerPrefs.SetInt("Girl", 1); break;
         }
 
+
+        switch (PlayerPrefs.GetInt("Baby"))
+        {
+            case 0: PlayerPrefs.SetInt("Baby", 1); break;
+            case 1: break;
+            case 2: babyButtonAnimator.SetBool("Bought", true); break;
+            default: PlayerPrefs.SetInt("Baby", 1); break;
+        }
+
         switch (PlayerPrefs.GetString("Selected"))
         {
             case "Grandma": grandmaButtonAnimator.SetBool("Check", true); break;
             case "Grandpa": grandpaButtonAnimator.SetBool("Check", true); break;
             case "Auntie": auntieButtonAnimator.SetBool("Check", true); break;
             case "Girl": girlButtonAnimator.SetBool("Check", true); break;
+            case "Baby": babyButtonAnimator.SetBool("Check", true); break;
             default: grandmaButtonAnimator.SetBool("Check", true); PlayerPrefs.SetString("Selected", "Grandma"); break;
         }
     }
@@ -110,6 +121,18 @@ public class StoreController : MonoBehaviour
                     StartCoroutine(money.Alter());
                 }
                 break; 
+            case "Baby":
+                if (Wallet.Single.RemoveGold(5000))
+                {
+                    PlayerPrefs.SetInt("Baby", 2);
+                    babyButtonAnimator.SetBool("Bought", true);
+                    OnSelect(name);
+                }
+                else
+                {
+                    StartCoroutine(money.Alter());
+                }
+                break; 
             default: break;
         }
     }
@@ -123,6 +146,7 @@ public class StoreController : MonoBehaviour
             case "Grandpa": PlayerPrefs.SetString("Selected", "Grandpa"); grandpaButtonAnimator.SetBool("Check", true); break;
             case "Auntie": PlayerPrefs.SetString("Selected", "Auntie"); auntieButtonAnimator.SetBool("Check", true); break;
             case "Girl": PlayerPrefs.SetString("Selected", "Girl"); girlButtonAnimator.SetBool("Check", true); break;
+            case "Baby": PlayerPrefs.SetString("Selected", "Baby"); babyButtonAnimator.SetBool("Check", true); break;
             default: break;
         }
     }
@@ -135,6 +159,7 @@ public class StoreController : MonoBehaviour
             case "Grandpa": grandpaButtonAnimator.SetBool("Check", false); break;
             case "Auntie": auntieButtonAnimator.SetBool("Check", false); break;
             case "Girl": girlButtonAnimator.SetBool("Check", false); break;
+            case "Baby": babyButtonAnimator.SetBool("Check", false); break;
             default: break;
         }
     }
@@ -155,6 +180,7 @@ public class StoreController : MonoBehaviour
         PlayerPrefs.SetInt("Grandpa", 1);
         PlayerPrefs.SetInt("Auntie", 1);
         PlayerPrefs.SetInt("Girl", 1);
+        PlayerPrefs.SetInt("Baby", 1);
         PlayerPrefs.SetString("Selected", "Grandma");
     }
 
