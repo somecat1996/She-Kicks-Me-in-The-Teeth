@@ -50,13 +50,13 @@ public class PlayerAttack : MonoBehaviour
     void Update()
     {
         //传值
-        haoWan = GetComponent<Stamina>().HaoWan;
+        haoWan = GetComponent<Stamina1>().HaoWan;
 
         if (!gameController.end && Input.GetMouseButtonDown(0) && !haoWan && !gameController.end && !gameController.pause)
         {
             if (attackStage == 0)
             {
-                GetComponent<Stamina>().ReduceStaminaValue(staminaValue);
+                GetComponent<Stamina1>().ReduceStaminaValue(staminaValue);
                 //动画播放
                 attackStage = 1;
                 animator.SetInteger("Attack Stage", attackStage);
@@ -83,7 +83,7 @@ public class PlayerAttack : MonoBehaviour
     {
         if (attackStage >= 2)
         {
-            GetComponent<Stamina>().ReduceStaminaValue(staminaValue);
+            GetComponent<Stamina1>().ReduceStaminaValue(staminaValue);
             animator.SetInteger("Attack Stage", 2);
             //播放音效
             randomPlayAudio.RandomPlay();
@@ -100,7 +100,7 @@ public class PlayerAttack : MonoBehaviour
     {
         if (attackStage == 3)
         {
-            GetComponent<Stamina>().ReduceStaminaValue(staminaValue);
+            GetComponent<Stamina1>().ReduceStaminaValue(staminaValue);
             animator.SetInteger("Attack Stage", attackStage);
             //播放音效
             randomPlayAudio.RandomPlay();
