@@ -39,7 +39,7 @@ public class Stamina : MonoBehaviour
     void Update()
     {
         //传值
-        //nl = GetComponent<Attack>().staminaValue;
+        nl = GetComponent<PlayerAttack>().staminaValue;
 
         StartCoroutine(ReplyStamina());
         if (staminaValue > maxStaminaValue)
@@ -50,7 +50,7 @@ public class Stamina : MonoBehaviour
             tempTimer += Time.deltaTime;
         else
             isReply = true;
-        if (staminaValue<2)
+        if (staminaValue<nl)
         {
             HaoWan = true;
         }
