@@ -85,7 +85,7 @@ public class TrackController : MonoBehaviour
         GameObject newTrack = GameObject.Instantiate(Common.RandomSelect(ref tracks), Vector3.zero, Quaternion.identity, transform);
         newTrack.transform.localPosition = new Vector3(trackNum * trackLength + trackOffset, 0, 0);
         trackNum += 1;
-        newTrack.GetComponent<TrackBehavior>().CreateBlocks(level);
+        // newTrack.GetComponent<TrackBehavior>().CreateBlocks(level);
     }
     /// <summary>
     /// 游戏结束展示得分

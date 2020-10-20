@@ -5,6 +5,8 @@ using UnityEngine;
 public class PlayerAttack : MonoBehaviour
 {
     public TrackController trackController;
+    public SimpleTrackController foregroundController;
+    public SimpleTrackController backgroundController;
     public GameController gameController;
     [Header("攻击判断框")]
     public GameObject ATK;
@@ -120,12 +122,16 @@ public class PlayerAttack : MonoBehaviour
     // 游戏结束
     public void OnGameEnd()
     {
+        foregroundController.OnEnd();
+        backgroundController.OnEnd();
         trackController.OnEnd();
         gameController.OnEnd();
     }
     // 初始动画结束后开始游戏
     public void OnGameStart()
     {
+        foregroundController.OnStart();
+        backgroundController.OnStart();
         trackController.OnStart();
         gameController.OnRun();
     }

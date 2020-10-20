@@ -9,6 +9,7 @@ TagManager:
   - TrackController
   - Attack
   - Attack1
+  - ForegroundController
   layers:
   - Default
   - TransparentFX

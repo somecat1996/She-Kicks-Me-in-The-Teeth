@@ -33,4 +33,27 @@ public class Common : MonoBehaviour
         }
         return newArray;
     }
+
+    public static T ChanceSelect<T>(ref T[] itemArray, float[] chanceArray, ref T def)
+    {
+        if (itemArray.Length != chanceArray.Length) return def;
+        float c = Random.Range(0, 1);
+        float sum = 0;
+        for (int i = 0; i < itemArray.Length; i++)
+        {
+            sum += chanceArray[i];
+            if (sum > c)
+            {
+                return itemArray[i];
+            }
+        }
+        return def;
+    }
+
+    public static bool TrueFalseSelect(float chance)
+    {
+        float c = Random.Range(0f, 1f);
+        if (chance >= c) return true;
+        else return false;
+    }
 }

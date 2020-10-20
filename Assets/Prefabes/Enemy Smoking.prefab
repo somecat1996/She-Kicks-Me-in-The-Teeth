@@ -163,6 +163,7 @@ GameObject:
   - component: {fileID: 8160292248397123791}
   - component: {fileID: 6543965284278069540}
   - component: {fileID: 8815793507693605093}
+  - component: {fileID: 2121743196852774454}
   m_Layer: 0
   m_Name: Enemy Smoking
   m_TagString: Enemy
@@ -226,3 +227,16 @@ MonoBehaviour:
   MyInpulse: {fileID: 4256261592863739776}
   anim: {fileID: 5027864753445371563}
   probability: 50
+--- !u!114 &2121743196852774454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3134321981812764452}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d9435af8562b274b92610e02bd7fab8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftRange: -20
