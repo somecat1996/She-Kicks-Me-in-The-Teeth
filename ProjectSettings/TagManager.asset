@@ -10,6 +10,7 @@ TagManager:
   - Attack
   - Attack1
   - ForegroundController
+  - BackgroundController
   layers:
   - Default
   - TransparentFX
