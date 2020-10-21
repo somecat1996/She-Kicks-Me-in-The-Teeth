@@ -5,6 +5,7 @@ using UnityEngine;
 public class TrapController : MonoBehaviour
 {
     public int middle;
+    public int left;
 
     private Animator anim;
     private Transform parent;
@@ -25,14 +26,20 @@ public class TrapController : MonoBehaviour
             collapse = true;
             anim.SetTrigger("Collapse");
         }
-    }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.tag == "Player" && !activate)
+        if (x <= left && !activate)
         {
             activate = true;
             anim.SetTrigger("Activate");
         }
     }
+
+    //private void OnTriggerEnter2D(Collider2D collision)
+    //{
+    //    if (collision.tag == "Player" && !activate)
+    //    {
+    //        activate = true;
+    //        anim.SetTrigger("Activate");
+    //    }
+    //}
 }
