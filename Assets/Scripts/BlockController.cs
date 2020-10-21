@@ -18,8 +18,11 @@ public class BlockController : MonoBehaviour
     public float width;
     [Header("障碍开始位置")]
     public float startPosition;
+    // 障碍纵向位置
     public float[] yPosition;
+    // 障碍偏移
     public float xOffset;
+    // 为true时创建障碍
     public bool startCreation = false;
 
     private Transform parent;
@@ -27,17 +30,27 @@ public class BlockController : MonoBehaviour
     private int newRoad = 1;
     private int col = 0;
 
+    // 换行标志
     private bool onShifting = false;
+    // 换行距离，经过shiftingDistance必定换行，否则按一定概率换行
     public float shiftingDistance = 100f;
+    // 换行状态持续的列
     public int shiftingCol = 5;
+    // 记录当前换行状态
     private int shiftingColCount = 0;
+    // 记录上次换行位置
     private float lastShifting = 0f;
 
+    // 障碍产生率，越大增加速度越快
     public int blockRate = 2;
+    // 陷阱产生概率
     public float trapRate = 0.05f;
+    // 攻击敌人产生概率
     public float aggressiveEnemyRate = 0.05f;
 
+    // 敌人距离
     public float enemyDistance = 100f;
+    // 上个敌人位置
     private float lastEnemy = 0f;
 
     // Start is called before the first frame update
@@ -52,8 +65,10 @@ public class BlockController : MonoBehaviour
         if (startCreation)
         {
             float x = parent.TransformPoint(transform.localPosition).x;
+            // 按宽度产生障碍
             while (col == 0 || -x / width > col)
             {
+                // 按概率换行
                 float shiftingChance = (lastShifting - x) / shiftingDistance;
                 if (!onShifting && Common.TrueFalseSelect(shiftingChance))
                 {
@@ -61,11 +76,13 @@ public class BlockController : MonoBehaviour
                     onShifting = true;
                     ShiftRoad();
                 }
+                // 产生障碍
                 col += 1;
                 float xPosition = startPosition + col * width;
                 float z;
                 for (int i = 0; i < yPosition.Length; i++)
                 {
+                    // 在非road行创建障碍
                     if (i != oldRoad && i != newRoad && Common.TrueFalseSelect((1f - math.pow(blockRate, x / 100)) * .75f))
                     {
                         GameObject tmpObject = GameObject.Instantiate(Common.RandomSelect(ref Blocks), Vector3.zero, Quaternion.identity, transform);
@@ -78,6 +95,7 @@ public class BlockController : MonoBehaviour
                         }
                         tmpObject.transform.localPosition = new Vector3(xPosition + i * xOffset, yPosition[i], z);
                     }
+                    // 在road行创建敌人
                     else if ((i == oldRoad || i == newRoad) && Common.TrueFalseSelect((lastEnemy - x) / enemyDistance))
                     {
                         lastEnemy = x;
@@ -91,6 +109,7 @@ public class BlockController : MonoBehaviour
                         }
                         tmpObject.transform.localPosition = new Vector3(xPosition + i * xOffset, yPosition[i], z);
                     }
+                    // 在road转换处创建陷阱和攻击敌人
                     else if (oldRoad != newRoad && (i == oldRoad || i == newRoad) && Common.TrueFalseSelect(trapRate + aggressiveEnemyRate))
                     {
                         if (Common.TrueFalseSelect(trapRate / (trapRate + aggressiveEnemyRate)))
@@ -113,6 +132,7 @@ public class BlockController : MonoBehaviour
 
                 }
 
+                // 换行状态
                 if (onShifting)
                 {
                     shiftingColCount += 1;
