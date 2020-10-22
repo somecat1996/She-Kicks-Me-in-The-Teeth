@@ -4810,6 +4810,17 @@ PrefabInstance:
       propertyPath: m_Size.x
       value: 3.1201081
       objectReference: {fileID: 0}
+    - target: {fileID: 2045102203587132801, guid: b664b99e19bfeb44293fa67fb8be292a,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 2820281516306304949, guid: 98128fca880efb549a776871e799c5ff,
+        type: 3}
+    - target: {fileID: 2045102203587132801, guid: b664b99e19bfeb44293fa67fb8be292a,
+        type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2045102203838797280, guid: b664b99e19bfeb44293fa67fb8be292a,
         type: 3}
       propertyPath: gameController
