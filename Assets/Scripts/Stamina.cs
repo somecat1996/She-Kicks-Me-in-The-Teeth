@@ -39,7 +39,15 @@ public class Stamina : MonoBehaviour
     void Update()
     {
         //传值
-        //nl = GetComponent<Attack>().staminaValue;
+        nl = GetComponent<Attack>().staminaValue;
+        if (staminaValue < nl)
+        {
+            HaoWan = true;
+        }
+        else
+        {
+            HaoWan = false;
+        }
 
         StartCoroutine(ReplyStamina());
         if (staminaValue > maxStaminaValue)
@@ -50,14 +58,6 @@ public class Stamina : MonoBehaviour
             tempTimer += Time.deltaTime;
         else
             isReply = true;
-        if (staminaValue<2)
-        {
-            HaoWan = true;
-        }
-        else
-        {
-            HaoWan = false;
-        }
 
         //数值文本显示
         //text.text = $"{staminaValue}/{maxStaminaValue}";

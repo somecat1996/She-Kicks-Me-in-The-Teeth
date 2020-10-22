@@ -1974,6 +1974,11 @@ PrefabInstance:
       propertyPath: bestText
       value: 
       objectReference: {fileID: 653104985}
+    - target: {fileID: 3017474953526639697, guid: 6abb6074fd0479349b67c1a01e454135,
+        type: 3}
+      propertyPath: addVelocity
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 3017474953526639698, guid: 6abb6074fd0479349b67c1a01e454135,
         type: 3}
       propertyPath: m_Name
@@ -4845,6 +4850,11 @@ PrefabInstance:
       propertyPath: stamina
       value: 
       objectReference: {fileID: 154076005}
+    - target: {fileID: 2549622570819186164, guid: 1d36d3d429b3b824dbe27c10aa3dc7ca,
+        type: 3}
+      propertyPath: timer
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 2549622570819186168, guid: 1d36d3d429b3b824dbe27c10aa3dc7ca,
         type: 3}
       propertyPath: staminaImage

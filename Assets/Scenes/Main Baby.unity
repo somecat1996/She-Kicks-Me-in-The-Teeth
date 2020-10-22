@@ -2922,6 +2922,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3017474952956666357, guid: 6abb6074fd0479349b67c1a01e454135,
+        type: 3}
+      propertyPath: NormalEnemies.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3017474952956666357, guid: 6abb6074fd0479349b67c1a01e454135,
+        type: 3}
+      propertyPath: NormalEnemies.Array.data[0]
+      value: 
+      objectReference: {fileID: 3134321981812764452, guid: d706f7335a8e31b4d8eb78090d9f84f5,
+        type: 3}
     - target: {fileID: 3017474953526639697, guid: 6abb6074fd0479349b67c1a01e454135,
         type: 3}
       propertyPath: meterDisplay
@@ -2937,6 +2948,11 @@ PrefabInstance:
       propertyPath: bestText
       value: 
       objectReference: {fileID: 653104985}
+    - target: {fileID: 3017474953526639697, guid: 6abb6074fd0479349b67c1a01e454135,
+        type: 3}
+      propertyPath: addVelocity
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 3017474953526639698, guid: 6abb6074fd0479349b67c1a01e454135,
         type: 3}
       propertyPath: m_Name
@@ -3414,6 +3430,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1632300268}
   m_CullTransparentMesh: 0
+--- !u!1 &1659415598 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2045102203493713968, guid: b664b99e19bfeb44293fa67fb8be292a,
+    type: 3}
+  m_PrefabInstance: {fileID: 2045102201959862647}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1692112823
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4810,6 +4832,11 @@ PrefabInstance:
       propertyPath: m_Size.x
       value: 3.1201081
       objectReference: {fileID: 0}
+    - target: {fileID: 2045102203549632600, guid: b664b99e19bfeb44293fa67fb8be292a,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 2045102203587132801, guid: b664b99e19bfeb44293fa67fb8be292a,
         type: 3}
       propertyPath: m_Sprite
@@ -4831,6 +4858,11 @@ PrefabInstance:
       propertyPath: value0
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2045102203838797280, guid: b664b99e19bfeb44293fa67fb8be292a,
+        type: 3}
+      propertyPath: body
+      value: 
+      objectReference: {fileID: 1659415598}
     - target: {fileID: 2045102203930719399, guid: b664b99e19bfeb44293fa67fb8be292a,
         type: 3}
       propertyPath: m_LocalPosition.x

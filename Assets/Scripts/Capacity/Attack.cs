@@ -54,17 +54,17 @@ public class Attack : MonoBehaviour
 
         if (!gameController.end && Input.GetMouseButtonDown(0) && !haoWan && !gameController.end && !gameController.pause)
         {
-                GetComponent<Stamina>().ReduceStaminaValue(staminaValue);
                 //动画播放
                 animator.SetTrigger("Attack");
-                //播放音效
-                randomPlayAudio.RandomPlay();
         }
     }
     //攻击开始，通过animator event调用，激活相应collider
     public void OnAttackStart()
     {
         ATK.SetActive(true);
+        //播放音效
+        randomPlayAudio.RandomPlay();
+        GetComponent<Stamina>().ReduceStaminaValue(staminaValue);
     }
     // 一阶攻击结束
     public void OnAttackEnd()

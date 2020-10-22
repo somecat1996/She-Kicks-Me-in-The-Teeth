@@ -135,6 +135,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   trackController: {fileID: 0}
+  foregroundController: {fileID: 0}
+  backgroundController: {fileID: 0}
   gameController: {fileID: 0}
   ATK: {fileID: 2966883729370223549}
   damage: 0
@@ -203,6 +205,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   trackController: {fileID: 0}
+  foregroundController: {fileID: 0}
+  backgroundController: {fileID: 0}
   gameController: {fileID: 0}
   healthPoint: 2
   animator: {fileID: 2966883727891110532}
@@ -270,7 +274,7 @@ GameObject:
   - component: {fileID: 2966883728352302008}
   m_Layer: 0
   m_Name: Doc
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

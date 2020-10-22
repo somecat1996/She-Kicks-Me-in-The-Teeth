@@ -4176,6 +4176,11 @@ PrefabInstance:
       propertyPath: stamina
       value: 
       objectReference: {fileID: 154076005}
+    - target: {fileID: 2966883727891110543, guid: 53e356da990b7844e8764be70b4a3308,
+        type: 3}
+      propertyPath: timer
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 2966883727917412158, guid: 53e356da990b7844e8764be70b4a3308,
         type: 3}
       propertyPath: trackController

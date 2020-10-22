@@ -1850,6 +1850,11 @@ PrefabInstance:
       propertyPath: bestText
       value: 
       objectReference: {fileID: 653104985}
+    - target: {fileID: 3017474953526639697, guid: 6abb6074fd0479349b67c1a01e454135,
+        type: 3}
+      propertyPath: addVelocity
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 3017474953526639698, guid: 6abb6074fd0479349b67c1a01e454135,
         type: 3}
       propertyPath: m_Name

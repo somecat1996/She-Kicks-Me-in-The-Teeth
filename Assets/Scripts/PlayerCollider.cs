@@ -63,5 +63,21 @@ public class PlayerCollider : MonoBehaviour
                 backgroundController.OnEnd();
             }
         }
+        if (collision.tag == "Bullet")
+        {
+            // 减少角色健康
+            healthPoint -= 1;
+            healthManager.Sub();
+
+            if (healthPoint <= 0)
+            {
+                // 角色死亡动画
+                animator.SetTrigger("die");
+                // 停止场景移动
+                trackController.OnEnd();
+                foregroundController.OnEnd();
+                backgroundController.OnEnd();
+            }
+        }
     }
 }

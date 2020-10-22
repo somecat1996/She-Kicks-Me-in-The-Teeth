@@ -24,7 +24,6 @@ public class Ballet : MonoBehaviour
     {
         if (!rotate&&CD>=0)
         {
-            
             CD -= Time.deltaTime;
         }
         else if (CD<0)

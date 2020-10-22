@@ -7,6 +7,7 @@ public class Car : MonoBehaviour
     public GameController gameController;
 
     public Animator anim;
+    public GameObject body;
 
     public bool drive;
     public bool save;
@@ -36,12 +37,15 @@ public class Car : MonoBehaviour
             key = true;
         }
 
-        if (key&&!haoWan)
+        if (!gameController.end && key&&!haoWan)
         {
             drive = true;
+            //消耗耐力值
             GetComponent<Stamina>().ReduceStaminaValue(staminaValue);
-
+            //开启动画
             anim.SetBool("Drive", true);
+            //关闭角色可以被伤害判定
+            body.SetActive(false);
         }
 
         Debug.Log(haoWan);
@@ -49,6 +53,8 @@ public class Car : MonoBehaviour
         {
             drive = false;
             key = false;
+            //开启角色可以被伤害判定
+            body.SetActive(true);
             anim.SetBool("Drive", false);
         }      
     }
@@ -63,6 +69,10 @@ public class Car : MonoBehaviour
         {
             Destroy(collision.gameObject);
             gameController.OnDefeatEnemy(value0);
+        }
+        if (collision.tag == "Bullet" && drive)
+        {
+            Destroy(collision.gameObject);
         }
     }
 }
