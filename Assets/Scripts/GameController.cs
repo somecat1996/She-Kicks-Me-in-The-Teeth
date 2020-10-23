@@ -25,7 +25,7 @@ public class GameController : MonoBehaviour
     void Update()
     {
         // 在游戏中监听esc按键暂停
-        if (SceneManager.GetActiveScene().buildIndex == 1 && Input.GetKeyDown(KeyCode.Escape)) OnPause();
+        if (SceneManager.GetActiveScene().buildIndex != 0 && Input.GetKeyDown(KeyCode.Escape)) OnPause();
     }
 
 
