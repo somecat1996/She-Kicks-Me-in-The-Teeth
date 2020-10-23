@@ -254,6 +254,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 11141500}
   m_CullTransparentMesh: 0
+--- !u!1 &69418388 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2549622570774141003, guid: 1d36d3d429b3b824dbe27c10aa3dc7ca,
+    type: 3}
+  m_PrefabInstance: {fileID: 2549622571406246156}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &145456656
 GameObject:
   m_ObjectHideFlags: 0
@@ -284,6 +290,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 213582e904466c944943f847fb79ef11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  body: {fileID: 0}
   animator: {fileID: 0}
   rotate: 0
   CD: 5
@@ -4815,6 +4822,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2549622570754431037, guid: 1d36d3d429b3b824dbe27c10aa3dc7ca,
+        type: 3}
+      propertyPath: body
+      value: 
+      objectReference: {fileID: 69418388}
     - target: {fileID: 2549622570774140997, guid: 1d36d3d429b3b824dbe27c10aa3dc7ca,
         type: 3}
       propertyPath: trackController

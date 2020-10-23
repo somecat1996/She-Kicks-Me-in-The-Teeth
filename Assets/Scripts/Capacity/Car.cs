@@ -48,7 +48,6 @@ public class Car : MonoBehaviour
             body.SetActive(false);
         }
 
-        Debug.Log(haoWan);
         if (haoWan)
         {
             drive = false;

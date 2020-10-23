@@ -38,8 +38,16 @@ public class Stamina : MonoBehaviour
 
     void Update()
     {
-        //传值
-        nl = GetComponent<Attack>().staminaValue;
+        if (!(GameObject.Find("Baby") == null))
+        {
+            nl = 2;
+        }
+        else
+        {
+            //传值
+            nl = GetComponent<Attack>().staminaValue;
+        }
+        
         if (staminaValue < nl)
         {
             HaoWan = true;

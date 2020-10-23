@@ -5,12 +5,10 @@ using UnityEngine;
 public class Gun : MonoBehaviour
 {
     [Header("枪的一些参数")]
-    public float attackDistance;//攻击范围
     public float restDistance;//休眠范围
-    public float CD;
 
-    private float startCD;
-    private bool bomb;
+    public float CD;
+    public float startCD;
 
     [Header("子弹的一些参数")]
     public Transform firePoint;
@@ -19,54 +17,44 @@ public class Gun : MonoBehaviour
     [Header("芭蕾舞爷爷击打掉落两颗牙齿几率")]
     public float probability = 50;
 
+    public Animator anim;
     private GameObject[] role;
-
-    private GameObject myself;
+    private GameController gameController;
 
     // 相机震动源
     public Cinemachine.CinemachineCollisionImpulseSource MyInpulse;
 
-    public Animator anim;
-    private GameController gameController;
     // Start is called before the first frame update
     void Awake()
     {
         gameController = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
         role=GameObject.FindGameObjectsWithTag("Player");
-        startCD = CD;
     }
 
     private void Start()
     {
-        myself = this.gameObject;
-        bomb=true;
+        //Shoot(this.gameObject);
+        //myself = this.gameObject;
+        startCD = CD;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (CD>0)
+        if (CD>=0)
         {
             CD -= Time.deltaTime;
         }
-        else if (CD <= 0)
+        else if (CD <0)
         {
-            if (bomb&&Vector2.Distance(role[0].transform.position, transform.position) <= attackDistance && Vector2.Distance(role[0].transform.position, transform.position) > restDistance)
-            {
-                GameObject tmpObject = Instantiate(bulletPrefab, firePoint.position, transform.rotation);
-                tmpObject.layer = myself.layer;
-                CD = startCD;
-            }
-            
+            anim.SetTrigger("Shooting");
+            CD = startCD;
         }
 
-        if (Vector2.Distance(role[0].transform.position, transform.position) <=restDistance)
+        //如果玩家靠近攻击路人转动画状态
+        if (Vector2.Distance(role[0].transform.position, transform.position) <= restDistance)
         {
-            bomb = false;
-        }
-        else
-        {
-            bomb = true;
+            anim.SetTrigger("Sleeping");
         }
     }
 
@@ -101,12 +89,22 @@ public class Gun : MonoBehaviour
                 int value2 = 1;
                 gameController.OnDefeatEnemy(value2);
             }
-
         }
     }
     // <summary>摧毁自身</summary>
     public void SelfDestory()
     {
         Destroy(gameObject);
+    }
+
+    public void Shoot()
+    {
+        //GameObject grassPres = GameObject.Instantiate(bulletPrefab);
+        //grassPres.transform.SetParent(this.transform);
+
+        //grassPres.transform.position = this.transform.position;
+        Instantiate(bulletPrefab, firePoint.position, transform.rotation);
+        //other.layer =myself.layer;
+        //Debug.Log(myself);
     }
 }

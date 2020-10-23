@@ -10,8 +10,8 @@ public class Attack : MonoBehaviour
     public GameController gameController;
     [Header("攻击判断框")]
     public GameObject ATK;
-    [Header("攻击伤害")]
-    public float damage;
+    //[Header("攻击伤害")]
+    //public float damage;
     [Header("攻击所需消耗的耐力值")]
     public float staminaValue;
     [Header("插入攻击帧的时间")]

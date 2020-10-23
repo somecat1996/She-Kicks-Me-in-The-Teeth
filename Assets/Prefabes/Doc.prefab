@@ -119,7 +119,7 @@ MonoBehaviour:
   maxStaminaValue: 100
   staminaImage: {fileID: 0}
   stamina: {fileID: 0}
-  timer: 0.5
+  timer: 5
   secStaminaValue: 40
   HaoWan: 0
 --- !u!114 &2966883727891110530
@@ -596,6 +596,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 213582e904466c944943f847fb79ef11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  body: {fileID: 0}
   animator: {fileID: 0}
   rotate: 0
   CD: 5

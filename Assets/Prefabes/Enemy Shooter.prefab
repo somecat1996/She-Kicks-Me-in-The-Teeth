@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4256261592863739776}
   - component: {fileID: 6915739921828787293}
   - component: {fileID: 5027864753445371563}
+  - component: {fileID: 8944756981437352059}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -121,7 +122,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7478105662251939963, guid: c56a3ddd2382b0840b47248af382c2bd,
+  m_Sprite: {fileID: -4322921277714364496, guid: f064a72179022b94b8893b043ad78b17,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -143,7 +144,7 @@ Animator:
   m_GameObject: {fileID: 3128986752282805657}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 238b36c266e148a4b9b2136ebf4d535b, type: 2}
+  m_Controller: {fileID: 9100000, guid: 4e9ed2baea440314386450b4103809f2, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -152,6 +153,27 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &8944756981437352059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3128986752282805657}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 776486ceef1a5fb4a8d3e861fd30a12b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  restDistance: 1
+  CD: 1
+  startCD: 1
+  firePoint: {fileID: 8160292248397123791}
+  bulletPrefab: {fileID: 4341853347830538852, guid: 1d38c31d81ed312468afb0ad58373e74,
+    type: 3}
+  probability: 50
+  anim: {fileID: 5027864753445371563}
+  MyInpulse: {fileID: 4256261592863739776}
 --- !u!1 &3134321981812764452
 GameObject:
   m_ObjectHideFlags: 0
@@ -224,7 +246,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d9435af8562b274b92610e02bd7fab8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftRange: -20
+  leftRange: -50
 --- !u!114 &232246360932291703
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -232,17 +254,17 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3134321981812764452}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 776486ceef1a5fb4a8d3e861fd30a12b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackDistance: 100
-  restDistance: 1
-  CD: 2
+  restDistance: 2
+  CD: 5
+  startCD: 5
   firePoint: {fileID: 8160292248397123791}
   bulletPrefab: {fileID: 4341853347830538852, guid: 1d38c31d81ed312468afb0ad58373e74,
     type: 3}
   probability: 50
-  MyInpulse: {fileID: 4256261592863739776}
   anim: {fileID: 5027864753445371563}
+  MyInpulse: {fileID: 4256261592863739776}

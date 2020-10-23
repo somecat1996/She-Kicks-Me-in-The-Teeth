@@ -12,7 +12,8 @@ public class TrackController : MonoBehaviour
     public float velocity;
     [Header("最大速度")]
     public float maxVelocity;
-    public float addVelocity;
+    [Header("额外速度")]
+    public float extraVelocity;
     [Header("加速度")]
     public float acceleration;
     [Header("跑道长度")]
@@ -77,16 +78,18 @@ public class TrackController : MonoBehaviour
             {
                 if (GameObject.Find("Defense Collider").GetComponent<Car>().drive)
                 {
-                    rb.velocity = Vector2.left * addVelocity;
+                    velocity = extraVelocity;
+                    rb.velocity = Vector2.left * velocity;
                 }
                 else
                 {
                     rb.velocity = Vector2.left * (velocity / 2 + maxVelocity / 2);
                 }
+
             }
 
             //计分
-            meter += velocity * Time.deltaTime;
+            meter += System.Math.Abs(rb.velocity.x )* Time.deltaTime;
             meterDisplay.text = "Distance: " + math.floor(meter);
         }
         Rank();

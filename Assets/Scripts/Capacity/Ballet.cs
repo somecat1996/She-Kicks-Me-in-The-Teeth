@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Ballet : MonoBehaviour
 {
+    public GameObject body;
     public Animator animator;
 
     public bool rotate;
@@ -24,12 +25,15 @@ public class Ballet : MonoBehaviour
     {
         if (!rotate&&CD>=0)
         {
+            //开启角色可以被伤害判定
+            body.SetActive(true);
             CD -= Time.deltaTime;
         }
         else if (CD<0)
         {
             animator.SetBool("Dance", true);
-
+            //关闭角色可以被伤害判定
+            body.SetActive(false);
             rotate = true;
             CD = startCD;
         }

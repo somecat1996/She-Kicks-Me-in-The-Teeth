@@ -4,18 +4,45 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    [Tooltip("箭消失的时间")]
+    [Header("子弹消失的时间")]
     public float timer;
-    [Tooltip("箭的伤害值")]
+    [Header("子弹的伤害值")]
     public float speed;
+    private float addSpeed;
     public Rigidbody2D rb;
+
+    private TrackController trackController;
 
     void Start()
     {
-        rb.velocity = transform.right * speed;
-        Destroy(gameObject, timer);
-        
+        trackController = GameObject.FindGameObjectWithTag("TrackController").GetComponent<TrackController>();
+
+
+
+        Destroy(gameObject, timer); 
+        if (this.transform.position.y > -2.08f)
+        {
+            this.gameObject.layer = LayerMask.NameToLayer("FirstTrack");
+        }
+        else if (this.transform.position.y < -2.08f)
+        {
+            this.gameObject.layer = LayerMask.NameToLayer("ThirdTrack");
+        }
+        else
+        {
+            this.gameObject.layer = LayerMask.NameToLayer("SecondTrack");
+        }
     }
+
+    private void Update()
+    {
+        //传跑道速度值
+        addSpeed = trackController.velocity;
+        //设置子弹速度
+        rb.velocity = transform.right * (speed - addSpeed);// speed;
+        //Debug.Log(speed - addSpeed);
+    }
+
     void OnTriggerEnter2D(Collider2D collision)//敌人进入范围调用
     {
         if (collision.tag == "Player")
