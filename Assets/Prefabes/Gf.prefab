@@ -158,7 +158,7 @@ GameObject:
   - component: {fileID: 2549622570340820163}
   m_Layer: 0
   m_Name: Gf
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -335,6 +335,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   trackController: {fileID: 0}
+  foregroundController: {fileID: 0}
+  backgroundController: {fileID: 0}
   gameController: {fileID: 0}
   healthPoint: 2
   animator: {fileID: 2549622570819186175}
@@ -525,6 +527,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   trackController: {fileID: 0}
+  foregroundController: {fileID: 0}
+  backgroundController: {fileID: 0}
   gameController: {fileID: 0}
   ATK: {fileID: 2549622571487683782}
   damage: 0

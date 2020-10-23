@@ -10,8 +10,8 @@ public class Attack : MonoBehaviour
     public GameController gameController;
     [Header("攻击判断框")]
     public GameObject ATK;
-    [Header("攻击伤害")]
-    public float damage;
+    //[Header("攻击伤害")]
+    //public float damage;
     [Header("攻击所需消耗的耐力值")]
     public float staminaValue;
     [Header("插入攻击帧的时间")]
@@ -54,17 +54,17 @@ public class Attack : MonoBehaviour
 
         if (!gameController.end && Input.GetMouseButtonDown(0) && !haoWan && !gameController.end && !gameController.pause)
         {
-                GetComponent<Stamina>().ReduceStaminaValue(staminaValue);
                 //动画播放
                 animator.SetTrigger("Attack");
-                //播放音效
-                randomPlayAudio.RandomPlay();
         }
     }
     //攻击开始，通过animator event调用，激活相应collider
     public void OnAttackStart()
     {
         ATK.SetActive(true);
+        //播放音效
+        randomPlayAudio.RandomPlay();
+        GetComponent<Stamina>().ReduceStaminaValue(staminaValue);
     }
     // 一阶攻击结束
     public void OnAttackEnd()

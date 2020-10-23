@@ -12,6 +12,8 @@ public class TrackController : MonoBehaviour
     public float velocity;
     [Header("最大速度")]
     public float maxVelocity;
+    [Header("额外速度")]
+    public float extraVelocity;
     [Header("加速度")]
     public float acceleration;
     [Header("跑道长度")]
@@ -72,11 +74,27 @@ public class TrackController : MonoBehaviour
                 rb.velocity = Vector2.left * velocity;
             }
 
-            meter += velocity * Time.deltaTime;
+            if (!(GameObject.Find("Baby")==null))
+            {
+                if (GameObject.Find("Defense Collider").GetComponent<Car>().drive)
+                {
+                    velocity = extraVelocity;
+                    rb.velocity = Vector2.left * velocity;
+                }
+                else
+                {
+                    rb.velocity = Vector2.left * (velocity / 2 + maxVelocity / 2);
+                }
+
+            }
+
+            //计分
+            meter += System.Math.Abs(rb.velocity.x )* Time.deltaTime;
             meterDisplay.text = "Distance: " + math.floor(meter);
         }
         Rank();
     }
+
     /// <summary>
     /// 最右跑道移动至相机边界时调用，产生新跑道
     /// </summary>

@@ -4153,11 +4153,6 @@ PrefabInstance:
       objectReference: {fileID: 934826111}
     - target: {fileID: 2966883727891110530, guid: 53e356da990b7844e8764be70b4a3308,
         type: 3}
-      propertyPath: gameController
-      value: 
-      objectReference: {fileID: 253452752}
-    - target: {fileID: 2966883727891110530, guid: 53e356da990b7844e8764be70b4a3308,
-        type: 3}
       propertyPath: foregroundController
       value: 
       objectReference: {fileID: 1629296028}
@@ -4166,6 +4161,11 @@ PrefabInstance:
       propertyPath: backgroundController
       value: 
       objectReference: {fileID: 1271286934}
+    - target: {fileID: 2966883727891110530, guid: 53e356da990b7844e8764be70b4a3308,
+        type: 3}
+      propertyPath: gameController
+      value: 
+      objectReference: {fileID: 253452752}
     - target: {fileID: 2966883727891110543, guid: 53e356da990b7844e8764be70b4a3308,
         type: 3}
       propertyPath: staminaImage
@@ -4183,16 +4183,6 @@ PrefabInstance:
       objectReference: {fileID: 934826111}
     - target: {fileID: 2966883727917412158, guid: 53e356da990b7844e8764be70b4a3308,
         type: 3}
-      propertyPath: gameController
-      value: 
-      objectReference: {fileID: 253452752}
-    - target: {fileID: 2966883727917412158, guid: 53e356da990b7844e8764be70b4a3308,
-        type: 3}
-      propertyPath: healthManager
-      value: 
-      objectReference: {fileID: 359373241}
-    - target: {fileID: 2966883727917412158, guid: 53e356da990b7844e8764be70b4a3308,
-        type: 3}
       propertyPath: foregroundController
       value: 
       objectReference: {fileID: 1629296028}
@@ -4201,6 +4191,16 @@ PrefabInstance:
       propertyPath: backgroundController
       value: 
       objectReference: {fileID: 1271286934}
+    - target: {fileID: 2966883727917412158, guid: 53e356da990b7844e8764be70b4a3308,
+        type: 3}
+      propertyPath: gameController
+      value: 
+      objectReference: {fileID: 253452752}
+    - target: {fileID: 2966883727917412158, guid: 53e356da990b7844e8764be70b4a3308,
+        type: 3}
+      propertyPath: healthManager
+      value: 
+      objectReference: {fileID: 359373241}
     - target: {fileID: 2966883728352301991, guid: 53e356da990b7844e8764be70b4a3308,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4264,12 +4264,7 @@ PrefabInstance:
     - target: {fileID: 2966883728352302009, guid: 53e356da990b7844e8764be70b4a3308,
         type: 3}
       propertyPath: m_Name
-      value: Doc
-      objectReference: {fileID: 0}
-    - target: {fileID: 2966883728352302009, guid: 53e356da990b7844e8764be70b4a3308,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
+      value: Girl
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 53e356da990b7844e8764be70b4a3308, type: 3}

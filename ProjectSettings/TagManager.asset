@@ -11,6 +11,7 @@ TagManager:
   - Attack1
   - ForegroundController
   - BackgroundController
+  - Bullet
   layers:
   - Default
   - TransparentFX
