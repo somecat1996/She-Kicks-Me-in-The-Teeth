@@ -8,6 +8,7 @@ public class Attack : MonoBehaviour
     public SimpleTrackController foregroundController;
     public SimpleTrackController backgroundController;
     public GameController gameController;
+    public GameAudioController audioController;
     [Header("攻击判断框")]
     public GameObject ATK;
     //[Header("攻击伤害")]
@@ -79,6 +80,7 @@ public class Attack : MonoBehaviour
         backgroundController.OnEnd();
         trackController.OnEnd();
         gameController.OnEnd();
+        audioController.OnEnd();
     }
     // 初始动画结束后开始游戏
     public void OnGameStart()
@@ -87,6 +89,7 @@ public class Attack : MonoBehaviour
         backgroundController.OnStart();
         trackController.OnStart();
         gameController.OnRun();
+        audioController.OnStart();
     }
 }
 

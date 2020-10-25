@@ -13,6 +13,7 @@ public class Car : MonoBehaviour
     public bool save;
     public bool key;
 
+    public RandomPlayAudio randomPlayAudio;
 
     [Header("开车所需消耗的耐力值")]
     public float staminaValue;
@@ -63,15 +64,18 @@ public class Car : MonoBehaviour
         if (collision.tag == "Block"&&drive)
         {
             Destroy(collision.gameObject);
+            randomPlayAudio.RandomPlay();
         }
         if (collision.tag == "Enemy" && drive)
         {
             Destroy(collision.gameObject);
             gameController.OnDefeatEnemy(value0);
+            randomPlayAudio.RandomPlay();
         }
         if (collision.tag == "Bullet" && drive)
         {
             Destroy(collision.gameObject);
+            randomPlayAudio.RandomPlay();
         }
     }
 }

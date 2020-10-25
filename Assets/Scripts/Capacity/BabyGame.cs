@@ -8,6 +8,8 @@ public class BabyGame : MonoBehaviour
     public SimpleTrackController foregroundController;
     public SimpleTrackController backgroundController;
     public GameController gameController;
+    public GameAudioController audioController;
+
     // 游戏结束
     public void OnGameEnd()
     {
@@ -15,6 +17,7 @@ public class BabyGame : MonoBehaviour
         backgroundController.OnEnd();
         trackController.OnEnd();
         gameController.OnEnd();
+        audioController.OnEnd();
     }
     // 初始动画结束后开始游戏
     public void OnGameStart()
@@ -23,5 +26,6 @@ public class BabyGame : MonoBehaviour
         backgroundController.OnStart();
         trackController.OnStart();
         gameController.OnRun();
+        audioController.OnStart();
     }
 }

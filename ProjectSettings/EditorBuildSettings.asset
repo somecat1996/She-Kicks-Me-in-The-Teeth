@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Main Baby.unity
     guid: 73170c48b23c47847be51cc28ebd409e
+  - enabled: 1
+    path: Assets/Scenes/Main Aun.unity
+    guid: 2c0bd03aa581ac9499896be24fd70d29
   m_configObjects: {}
