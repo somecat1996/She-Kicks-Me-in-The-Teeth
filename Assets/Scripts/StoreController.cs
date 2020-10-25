@@ -10,13 +10,15 @@ public class StoreController : MonoBehaviour
     public Animator girlButtonAnimator;
     public Animator babyButtonAnimator;
 
+    public MenuAudioController audioController;
+
     public TextAlter money;
 
     // Start is called before the first frame update
     void Start()
     {
         // 完全初始化，清除所有购买记录
-        // ResetStore();
+        ResetStore();
         // 初始化商店
         // 0 -- 未设置，1 -- 未购买，2 -- 已购买
         switch (PlayerPrefs.GetInt("Grandma"))
@@ -88,48 +90,56 @@ public class StoreController : MonoBehaviour
             case "Grandpa":
                 if (Wallet.Single.RemoveGold(100))
                 {
+                    audioController.OnPay();
                     PlayerPrefs.SetInt("Grandpa", 2);
                     grandpaButtonAnimator.SetBool("Bought", true);
                     OnSelect(name);
                 }
                 else
                 {
+                    audioController.OnError();
                     StartCoroutine(money.Alter());
                 }
                 break;
             case "Auntie":
                 if (Wallet.Single.RemoveGold(500))
                 {
+                    audioController.OnPay();
                     PlayerPrefs.SetInt("Auntie", 2); 
                     auntieButtonAnimator.SetBool("Bought", true);
                     OnSelect(name);
                 }
                 else
                 {
+                    audioController.OnError();
                     StartCoroutine(money.Alter());
                 }
                 break;
             case "Girl":
                 if (Wallet.Single.RemoveGold(1000))
                 {
+                    audioController.OnPay();
                     PlayerPrefs.SetInt("Girl", 2);
                     girlButtonAnimator.SetBool("Bought", true);
                     OnSelect(name);
                 }
                 else
                 {
+                    audioController.OnError();
                     StartCoroutine(money.Alter());
                 }
                 break; 
             case "Baby":
                 if (Wallet.Single.RemoveGold(5000))
                 {
+                    audioController.OnPay();
                     PlayerPrefs.SetInt("Baby", 2);
                     babyButtonAnimator.SetBool("Bought", true);
                     OnSelect(name);
                 }
                 else
                 {
+                    audioController.OnError();
                     StartCoroutine(money.Alter());
                 }
                 break; 
