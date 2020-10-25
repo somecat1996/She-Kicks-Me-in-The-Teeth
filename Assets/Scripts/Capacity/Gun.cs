@@ -20,6 +20,7 @@ public class Gun : MonoBehaviour
     public Animator anim;
     private GameObject[] role;
     private GameController gameController;
+    private bool first;
 
     // 相机震动源
     public Cinemachine.CinemachineCollisionImpulseSource MyInpulse;
@@ -36,11 +37,18 @@ public class Gun : MonoBehaviour
         //Shoot(this.gameObject);
         //myself = this.gameObject;
         startCD = CD;
+        first = true;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (first)
+        {
+            anim.SetTrigger("Shooting");
+            first = false;
+        }
+
         if (CD>=0)
         {
             CD -= Time.deltaTime;
@@ -54,6 +62,7 @@ public class Gun : MonoBehaviour
         //如果玩家靠近攻击路人转动画状态
         if (Vector2.Distance(role[0].transform.position, transform.position) <= restDistance)
         {
+            Debug.Log(role[0]);
             anim.SetTrigger("Sleeping");
         }
     }

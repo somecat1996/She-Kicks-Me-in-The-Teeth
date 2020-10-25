@@ -165,9 +165,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 776486ceef1a5fb4a8d3e861fd30a12b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  restDistance: 1
-  CD: 1
-  startCD: 1
+  restDistance: 5
+  CD: 5
+  startCD: 5
   firePoint: {fileID: 8160292248397123791}
   bulletPrefab: {fileID: 4341853347830538852, guid: 1d38c31d81ed312468afb0ad58373e74,
     type: 3}
@@ -259,7 +259,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 776486ceef1a5fb4a8d3e861fd30a12b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  restDistance: 2
+  restDistance: 50
   CD: 5
   startCD: 5
   firePoint: {fileID: 8160292248397123791}

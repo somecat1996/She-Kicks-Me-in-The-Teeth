@@ -34,6 +34,8 @@ public class TrackController : MonoBehaviour
 
     private bool end;
 
+    private float tp;
+
     //最高分记录
     private float score;
     private float best = 0;
@@ -61,6 +63,7 @@ public class TrackController : MonoBehaviour
         meterDisplay.text = "Distance: " + math.floor(meter);
 
         end = true;
+         tp= maxVelocity / 2;
     }
 
     // Update is called once per frame
@@ -74,18 +77,19 @@ public class TrackController : MonoBehaviour
                 rb.velocity = Vector2.left * velocity;
             }
 
-            if (PlayerPrefs.GetString("Selected") == "Baby")
+            if(!(GameObject.Find("Baby") == null))//if (PlayerPrefs.GetString("Selected") == "Baby")
             {
                 if (GameObject.Find("Defense Collider").GetComponent<Car>().drive)
                 {
                     velocity = extraVelocity;
                     rb.velocity = Vector2.left * velocity;
                 }
-                else
+                else if (tp <= maxVelocity)
                 {
-                    rb.velocity = Vector2.left * (velocity / 2 + maxVelocity / 2);
+                        tp += acceleration * Time.deltaTime;
+                        rb.velocity = Vector2.left * tp;
+                        Debug.Log(tp);
                 }
-
             }
 
             //计分

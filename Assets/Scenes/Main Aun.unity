@@ -4156,6 +4156,11 @@ PrefabInstance:
       propertyPath: healthManager
       value: 
       objectReference: {fileID: 359373241}
+    - target: {fileID: 6105669806935894068, guid: e8500dd126fc78043a8229ea94ebfb1a,
+        type: 3}
+      propertyPath: healthPoint
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6105669807363480444, guid: e8500dd126fc78043a8229ea94ebfb1a,
         type: 3}
       propertyPath: gameController

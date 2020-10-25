@@ -65,7 +65,7 @@ public class PlayerCollider : MonoBehaviour
         }
         if (collision.tag == "Bullet")
         {
-            Debug.Log("A");
+            //Debug.Log("A");
             // 减少角色健康
             healthPoint -= 1;
             healthManager.Sub();

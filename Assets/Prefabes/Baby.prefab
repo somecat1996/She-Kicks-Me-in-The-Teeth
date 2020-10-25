@@ -272,6 +272,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   trackController: {fileID: 0}
+  foregroundController: {fileID: 0}
+  backgroundController: {fileID: 0}
   gameController: {fileID: 0}
   healthPoint: 2
   animator: {fileID: 2045102203587132804}
@@ -373,7 +375,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.18, y: -0.2}
+  m_Offset: {x: 0.380054, y: 0.06417632}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -384,7 +386,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2, y: 2}
+  m_Size: {x: 3.1201081, y: 2.5283527}
   m_EdgeRadius: 0
 --- !u!114 &2045102203838797280
 MonoBehaviour:
@@ -400,11 +402,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameController: {fileID: 0}
   anim: {fileID: 2045102203587132804}
+  body: {fileID: 2045102203493713968}
   drive: 0
   save: 0
   key: 0
+  randomPlayAudio: {fileID: 2045102203209676172}
   staminaValue: 0.1
-  value0: 0
+  value0: 1
 --- !u!114 &5459320193212570601
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -495,7 +499,7 @@ SpriteRenderer:
   m_SortingLayerID: 1228877097
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 2820281516306304949, guid: 4fa232788d6988145a0590e45f39a1d7,
+  m_Sprite: {fileID: 2820281516306304949, guid: 98128fca880efb549a776871e799c5ff,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -539,7 +543,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   trackController: {fileID: 0}
+  foregroundController: {fileID: 0}
+  backgroundController: {fileID: 0}
   gameController: {fileID: 0}
+  audioController: {fileID: 0}
 --- !u!1 &2045102203930719417
 GameObject:
   m_ObjectHideFlags: 0
@@ -552,7 +559,7 @@ GameObject:
   - component: {fileID: 2045102203930719416}
   m_Layer: 0
   m_Name: Baby
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -43,7 +43,7 @@ public class Bullet : MonoBehaviour
             //传跑道速度值
             addSpeed = trackController.velocity;
             //设置子弹速度
-            rb.velocity = transform.right * (speed - addSpeed); ;
+            rb.velocity = transform.right *  - addSpeed ;
             Debug.Log(addSpeed);
         }
         else
@@ -51,16 +51,15 @@ public class Bullet : MonoBehaviour
             //传跑道速度值
             addSpeed = trackController.velocity;
             //设置子弹速度
-            rb.velocity = transform.right * (speed - addSpeed);// speed;                                                       //Debug.Log(speed - addSpeed);
+            rb.velocity = transform.right * (speed - addSpeed);// speed;//Debug.Log(speed - addSpeed);
         }
     }
 
-    void OnTriggerEnter2D(Collider2D collision)//敌人进入范围调用
-    {
-        if (collision.tag == "Player")
-        {
-            //Destroy(gameObject);
-        }
-
-    }
+    //void OnTriggerEnter2D(Collider2D collision)//敌人进入范围调用
+    //{
+    //    if (collision.tag == "Player")
+    //    {
+    //        //Destroy(gameObject);
+    //    }
+    //}
 }

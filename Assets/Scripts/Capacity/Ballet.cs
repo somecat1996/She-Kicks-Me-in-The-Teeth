@@ -41,13 +41,20 @@ public class Ballet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Block"&&rotate)
+        //跳舞时无视障碍伤害
+        if (collision.tag == "Block"&& rotate)
         {
             Destroy(collision.gameObject);
             rotate = false;
 
             animator.SetBool("Dance", false);
         }
+        //跳舞时无视子弹伤害
+        else if(collision.tag == "Bullet" && rotate)
+        {
+            Destroy(collision.gameObject);
+        }
+        //如果不在跳舞，撞击障碍则重置CD
         else if(collision.tag == "Block" && !rotate)
         {
             CD = startCD;
