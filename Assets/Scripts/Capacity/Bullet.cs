@@ -12,12 +12,13 @@ public class Bullet : MonoBehaviour
     public Rigidbody2D rb;
 
     private TrackController trackController;
+    private Animator anim;
 
     void Start()
     {
         trackController = GameObject.FindGameObjectWithTag("TrackController").GetComponent<TrackController>();
 
-
+        anim = GetComponent<Animator>();
 
         Destroy(gameObject, timer); 
         if (this.transform.position.y > -2.08f)
@@ -36,11 +37,22 @@ public class Bullet : MonoBehaviour
 
     private void Update()
     {
-        //传跑道速度值
-        addSpeed = trackController.velocity;
-        //设置子弹速度
-        rb.velocity = transform.right * (speed - addSpeed);// speed;
-        //Debug.Log(speed - addSpeed);
+        if (!(GameObject.Find("Aun") == null))
+        {
+            anim.SetTrigger("Sleeping");
+            //传跑道速度值
+            addSpeed = trackController.velocity;
+            //设置子弹速度
+            rb.velocity = transform.right * (speed - addSpeed); ;
+            Debug.Log(addSpeed);
+        }
+        else
+        {
+            //传跑道速度值
+            addSpeed = trackController.velocity;
+            //设置子弹速度
+            rb.velocity = transform.right * (speed - addSpeed);// speed;                                                       //Debug.Log(speed - addSpeed);
+        }
     }
 
     void OnTriggerEnter2D(Collider2D collision)//敌人进入范围调用
