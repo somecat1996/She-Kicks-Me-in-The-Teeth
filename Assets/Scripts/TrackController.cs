@@ -74,7 +74,7 @@ public class TrackController : MonoBehaviour
                 rb.velocity = Vector2.left * velocity;
             }
 
-            if (!(GameObject.Find("Baby")==null))
+            if (PlayerPrefs.GetString("Selected") == "Baby")
             {
                 if (GameObject.Find("Defense Collider").GetComponent<Car>().drive)
                 {

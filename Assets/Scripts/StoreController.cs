@@ -94,7 +94,7 @@ public class StoreController : MonoBehaviour
                     PlayerPrefs.SetInt("Grandpa", 2);
                     grandpaButtonAnimator.SetBool("Bought", true);
                     OnSelect(name);
-                    PlayerPrefs.SetInt("ArchievementStone", 1);
+                    PlayerPrefs.SetInt("ArchievementRing", 1);
                 }
                 else
                 {
@@ -109,6 +109,7 @@ public class StoreController : MonoBehaviour
                     PlayerPrefs.SetInt("Auntie", 2); 
                     auntieButtonAnimator.SetBool("Bought", true);
                     OnSelect(name);
+                    PlayerPrefs.SetInt("ArchievementTeeth3", 1);
                 }
                 else
                 {
@@ -123,6 +124,7 @@ public class StoreController : MonoBehaviour
                     PlayerPrefs.SetInt("Girl", 2);
                     girlButtonAnimator.SetBool("Bought", true);
                     OnSelect(name);
+                    PlayerPrefs.SetInt("ArchievementTeeth1", 1);
                 }
                 else
                 {
@@ -137,6 +139,7 @@ public class StoreController : MonoBehaviour
                     PlayerPrefs.SetInt("Baby", 2);
                     babyButtonAnimator.SetBool("Bought", true);
                     OnSelect(name);
+                    PlayerPrefs.SetInt("ArchievementFlower1", 1);
                 }
                 else
                 {
