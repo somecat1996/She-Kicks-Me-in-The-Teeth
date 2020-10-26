@@ -1625,6 +1625,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3017474952956666357, guid: 6abb6074fd0479349b67c1a01e454135,
+        type: 3}
+      propertyPath: Blocks.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3017474952956666357, guid: 6abb6074fd0479349b67c1a01e454135,
+        type: 3}
+      propertyPath: Blocks.Array.data[4]
+      value: 
+      objectReference: {fileID: 3134321981812764452, guid: d706f7335a8e31b4d8eb78090d9f84f5,
+        type: 3}
     - target: {fileID: 3017474953526639697, guid: 6abb6074fd0479349b67c1a01e454135,
         type: 3}
       propertyPath: meterDisplay
@@ -1640,6 +1651,11 @@ PrefabInstance:
       propertyPath: bestText
       value: 
       objectReference: {fileID: 653104985}
+    - target: {fileID: 3017474953526639697, guid: 6abb6074fd0479349b67c1a01e454135,
+        type: 3}
+      propertyPath: maxVelocity
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 3017474953526639698, guid: 6abb6074fd0479349b67c1a01e454135,
         type: 3}
       propertyPath: m_Name
@@ -4252,6 +4268,11 @@ PrefabInstance:
       propertyPath: audioController
       value: 
       objectReference: {fileID: 1117052443}
+    - target: {fileID: 2966883727891110530, guid: 53e356da990b7844e8764be70b4a3308,
+        type: 3}
+      propertyPath: staminaValue
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 2966883727891110543, guid: 53e356da990b7844e8764be70b4a3308,
         type: 3}
       propertyPath: staminaImage
@@ -4262,31 +4283,16 @@ PrefabInstance:
       propertyPath: stamina
       value: 
       objectReference: {fileID: 154076005}
-    - target: {fileID: 2966883727917412158, guid: 53e356da990b7844e8764be70b4a3308,
+    - target: {fileID: 2966883727891110543, guid: 53e356da990b7844e8764be70b4a3308,
         type: 3}
-      propertyPath: trackController
-      value: 
-      objectReference: {fileID: 934826111}
-    - target: {fileID: 2966883727917412158, guid: 53e356da990b7844e8764be70b4a3308,
+      propertyPath: timer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2966883727891110543, guid: 53e356da990b7844e8764be70b4a3308,
         type: 3}
-      propertyPath: foregroundController
-      value: 
-      objectReference: {fileID: 1629296028}
-    - target: {fileID: 2966883727917412158, guid: 53e356da990b7844e8764be70b4a3308,
-        type: 3}
-      propertyPath: backgroundController
-      value: 
-      objectReference: {fileID: 1271286934}
-    - target: {fileID: 2966883727917412158, guid: 53e356da990b7844e8764be70b4a3308,
-        type: 3}
-      propertyPath: gameController
-      value: 
-      objectReference: {fileID: 253452752}
-    - target: {fileID: 2966883727917412158, guid: 53e356da990b7844e8764be70b4a3308,
-        type: 3}
-      propertyPath: healthManager
-      value: 
-      objectReference: {fileID: 359373241}
+      propertyPath: secStaminaValue
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 2966883728352301991, guid: 53e356da990b7844e8764be70b4a3308,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4352,6 +4358,31 @@ PrefabInstance:
       propertyPath: m_Name
       value: Girl
       objectReference: {fileID: 0}
+    - target: {fileID: 5938562219331324049, guid: 53e356da990b7844e8764be70b4a3308,
+        type: 3}
+      propertyPath: trackController
+      value: 
+      objectReference: {fileID: 934826111}
+    - target: {fileID: 5938562219331324049, guid: 53e356da990b7844e8764be70b4a3308,
+        type: 3}
+      propertyPath: foregroundController
+      value: 
+      objectReference: {fileID: 1629296028}
+    - target: {fileID: 5938562219331324049, guid: 53e356da990b7844e8764be70b4a3308,
+        type: 3}
+      propertyPath: backgroundController
+      value: 
+      objectReference: {fileID: 1271286934}
+    - target: {fileID: 5938562219331324049, guid: 53e356da990b7844e8764be70b4a3308,
+        type: 3}
+      propertyPath: gameController
+      value: 
+      objectReference: {fileID: 253452752}
+    - target: {fileID: 5938562219331324049, guid: 53e356da990b7844e8764be70b4a3308,
+        type: 3}
+      propertyPath: healthManager
+      value: 
+      objectReference: {fileID: 359373241}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 53e356da990b7844e8764be70b4a3308, type: 3}
 --- !u!1001 &8815487977853071309

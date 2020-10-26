@@ -23,18 +23,20 @@ public class TrackController : MonoBehaviour
     [Header("跑道列表")]
     public GameObject[] tracks;
     public int level;
+    [Header("游戏分数")]
+    public float meter;
 
     public Text meterDisplay;
     public Text finalMeterDisplay;
-
-    public float meter;
 
     private Rigidbody2D rb;
     private int trackNum;
 
     private bool end;
-
-    private float tp;
+    //飙车后速度
+    public float tp;
+    //判断是否使用初始速度
+    private bool first=false;
 
     //最高分记录
     private float score;
@@ -63,7 +65,8 @@ public class TrackController : MonoBehaviour
         meterDisplay.text = "Distance: " + math.floor(meter);
 
         end = true;
-         tp= maxVelocity / 2;
+        //初始化飙车后速度
+        tp= maxVelocity / 2;
     }
 
     // Update is called once per frame
@@ -71,24 +74,28 @@ public class TrackController : MonoBehaviour
     {
         if (!end)
         {
+            //开始游戏后人物开始加速
             if (velocity <= maxVelocity)
             {
                 velocity += acceleration * Time.deltaTime;
                 rb.velocity = Vector2.left * velocity;
             }
-
-            if(!(GameObject.Find("Baby") == null))//if (PlayerPrefs.GetString("Selected") == "Baby")
+            //Baby的飙车技能加速功能实现
+            if (!(GameObject.Find("Baby") == null))//if (PlayerPrefs.GetString("Selected") == "Baby")
             {
                 if (GameObject.Find("Defense Collider").GetComponent<Car>().drive)
                 {
                     velocity = extraVelocity;
                     rb.velocity = Vector2.left * velocity;
+                    first = true;
                 }
-                else if (tp <= maxVelocity)
+                //使用完飙车后Baby的初始速度重置
+                else if (tp <= maxVelocity&&first)
                 {
-                        tp += acceleration * Time.deltaTime;
-                        rb.velocity = Vector2.left * tp;
-                        Debug.Log(tp);
+                    velocity = tp;
+                    velocity += acceleration * Time.deltaTime;
+                    rb.velocity = Vector2.left * velocity;
+                    //Debug.Log(tp);
                 }
             }
 

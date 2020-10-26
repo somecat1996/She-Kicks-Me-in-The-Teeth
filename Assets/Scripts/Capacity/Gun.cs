@@ -14,7 +14,7 @@ public class Gun : MonoBehaviour
     public Transform firePoint;
     public GameObject bulletPrefab;
 
-    [Header("芭蕾舞爷爷击打掉落两颗牙齿几率")]
+    [Header("Aun击打掉落两颗牙齿几率")]
     public float probability = 50;
 
     public Animator anim;
@@ -108,12 +108,6 @@ public class Gun : MonoBehaviour
 
     public void Shoot()
     {
-        //GameObject grassPres = GameObject.Instantiate(bulletPrefab);
-        //grassPres.transform.SetParent(this.transform);
-
-        //grassPres.transform.position = this.transform.position;
         Instantiate(bulletPrefab, firePoint.position, transform.rotation);
-        //other.layer =myself.layer;
-        //Debug.Log(myself);
     }
 }

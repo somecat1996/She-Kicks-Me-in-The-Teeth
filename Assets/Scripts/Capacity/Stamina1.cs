@@ -29,11 +29,17 @@ public class Stamina1 : MonoBehaviour
     // 是否开始回复耐力值
     bool isReply = false;
 
+    //当前普通攻击消耗耐力值
     private float nl;
+
+    //当前耐力条颜色
+    private Color nowColor;
 
     void Start()
     {
-        staminaValue = maxStaminaValue;  
+        staminaValue = maxStaminaValue;
+        //初始化耐力条颜色
+        nowColor = staminaImage.GetComponent<Image>().color;
     }
 
     void Update()
@@ -50,13 +56,17 @@ public class Stamina1 : MonoBehaviour
             tempTimer += Time.deltaTime;
         else
             isReply = true;
-        if (staminaValue<nl)
+        //耐力值耗光时条显示红色
+        if (staminaValue < nl)
         {
             HaoWan = true;
+            staminaImage.GetComponent<Image>().color = Color.red;
         }
+        //重置耐力条颜色
         else
         {
             HaoWan = false;
+            staminaImage.GetComponent<Image>().color = nowColor;
         }
 
         //数值文本显示

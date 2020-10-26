@@ -157,7 +157,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timer: 10
-  speed: -10
+  speed: -5
   rb: {fileID: 5359139142786859693}
 --- !u!95 &6510741476454400521
 Animator:

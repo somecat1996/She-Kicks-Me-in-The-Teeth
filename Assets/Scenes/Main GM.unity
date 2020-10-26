@@ -837,6 +837,16 @@ PrefabInstance:
       propertyPath: staminaImage
       value: 
       objectReference: {fileID: 1632300270}
+    - target: {fileID: 8815487979358971057, guid: dc2c57f4cd1212b4b811fe23cd6e28fe,
+        type: 3}
+      propertyPath: maxStaminaValue
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 8815487979358971057, guid: dc2c57f4cd1212b4b811fe23cd6e28fe,
+        type: 3}
+      propertyPath: timer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8815487979358971062, guid: dc2c57f4cd1212b4b811fe23cd6e28fe,
         type: 3}
       propertyPath: trackController
@@ -1874,7 +1884,7 @@ PrefabInstance:
     - target: {fileID: 3017474953526639697, guid: 6abb6074fd0479349b67c1a01e454135,
         type: 3}
       propertyPath: maxVelocity
-      value: 7.5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 3017474953526639697, guid: 6abb6074fd0479349b67c1a01e454135,
         type: 3}

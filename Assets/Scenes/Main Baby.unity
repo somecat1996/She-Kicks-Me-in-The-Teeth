@@ -3043,7 +3043,7 @@ PrefabInstance:
     - target: {fileID: 3017474953526639697, guid: 6abb6074fd0479349b67c1a01e454135,
         type: 3}
       propertyPath: extraVelocity
-      value: 15
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 3017474953526639697, guid: 6abb6074fd0479349b67c1a01e454135,
         type: 3}
@@ -3053,7 +3053,7 @@ PrefabInstance:
     - target: {fileID: 3017474953526639697, guid: 6abb6074fd0479349b67c1a01e454135,
         type: 3}
       propertyPath: maxVelocity
-      value: 10
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 3017474953526639698, guid: 6abb6074fd0479349b67c1a01e454135,
         type: 3}

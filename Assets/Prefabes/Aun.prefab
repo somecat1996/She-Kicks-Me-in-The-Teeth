@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6105669806935894026}
   - component: {fileID: 6105669806935894069}
-  - component: {fileID: 6105669806935894068}
   - component: {fileID: 6105669806935894071}
+  - component: {fileID: 2752989564823195403}
   m_Layer: 8
   m_Name: Body Collider
   m_TagString: Player
@@ -49,27 +49,6 @@ CapsuleCollider2D:
   m_Offset: {x: -0.18, y: 0}
   m_Size: {x: 1.02, y: 1.61}
   m_Direction: 0
---- !u!114 &6105669806935894068
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6105669806935894070}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2ed2daba467706c48a72b23b3f80b51c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  trackController: {fileID: 0}
-  foregroundController: {fileID: 0}
-  backgroundController: {fileID: 0}
-  gameController: {fileID: 0}
-  healthPoint: 0
-  animator: {fileID: 6105669808086941222}
-  healthManager: {fileID: 0}
-  MyInpulse: {fileID: 6105669806935894071}
-  invincibleTime: 0
 --- !u!114 &6105669806935894071
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -119,6 +98,27 @@ MonoBehaviour:
   m_UseImpactDirection: 0
   m_ScaleImpactWithMass: 0
   m_ScaleImpactWithSpeed: 0
+--- !u!114 &2752989564823195403
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6105669806935894070}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff79927fc15d7e1488c940ed37f2ff28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trackController: {fileID: 0}
+  foregroundController: {fileID: 0}
+  backgroundController: {fileID: 0}
+  gameController: {fileID: 0}
+  healthPoint: 2
+  animator: {fileID: 6105669808086941222}
+  healthManager: {fileID: 0}
+  MyInpulse: {fileID: 6105669806935894071}
+  invincibleTime: 1
 --- !u!1 &6105669807363480447
 GameObject:
   m_ObjectHideFlags: 0
@@ -494,6 +494,7 @@ MonoBehaviour:
   foregroundController: {fileID: 0}
   backgroundController: {fileID: 0}
   gameController: {fileID: 0}
+  audioController: {fileID: 0}
   ATK: {fileID: 6105669808188244955}
   staminaValue: 20
   atkTime: 0
@@ -547,7 +548,7 @@ GameObject:
   - component: {fileID: 6105669808188244952}
   m_Layer: 0
   m_Name: Attack Collider
-  m_TagString: Attack
+  m_TagString: Attack1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -6,7 +6,7 @@ public class Bullet : MonoBehaviour
 {
     [Header("子弹消失的时间")]
     public float timer;
-    [Header("子弹的伤害值")]
+    [Header("子弹的速度")]
     public float speed;
     private float addSpeed;
     public Rigidbody2D rb;
@@ -37,14 +37,14 @@ public class Bullet : MonoBehaviour
 
     private void Update()
     {
-        if (!(GameObject.Find("Aun") == null))
+        if (!(GameObject.Find("Girl") == null))
         {
             anim.SetTrigger("Sleeping");
             //传跑道速度值
             addSpeed = trackController.velocity;
             //设置子弹速度
             rb.velocity = transform.right *  - addSpeed ;
-            Debug.Log(addSpeed);
+            //Debug.Log(addSpeed);
         }
         else
         {

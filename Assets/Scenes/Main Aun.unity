@@ -1690,11 +1690,22 @@ PrefabInstance:
     - target: {fileID: 3017474952956666357, guid: 6abb6074fd0479349b67c1a01e454135,
         type: 3}
       propertyPath: NormalEnemies.Array.size
-      value: 3
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3017474952956666357, guid: 6abb6074fd0479349b67c1a01e454135,
+        type: 3}
+      propertyPath: Blocks.Array.size
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3017474952956666357, guid: 6abb6074fd0479349b67c1a01e454135,
         type: 3}
       propertyPath: NormalEnemies.Array.data[2]
+      value: 
+      objectReference: {fileID: 3134321981812764452, guid: d706f7335a8e31b4d8eb78090d9f84f5,
+        type: 3}
+    - target: {fileID: 3017474952956666357, guid: 6abb6074fd0479349b67c1a01e454135,
+        type: 3}
+      propertyPath: Blocks.Array.data[4]
       value: 
       objectReference: {fileID: 3134321981812764452, guid: d706f7335a8e31b4d8eb78090d9f84f5,
         type: 3}
@@ -4131,36 +4142,31 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 6105669806935894068, guid: e8500dd126fc78043a8229ea94ebfb1a,
+    - target: {fileID: 2752989564823195403, guid: e8500dd126fc78043a8229ea94ebfb1a,
         type: 3}
       propertyPath: trackController
       value: 
       objectReference: {fileID: 925948031}
-    - target: {fileID: 6105669806935894068, guid: e8500dd126fc78043a8229ea94ebfb1a,
+    - target: {fileID: 2752989564823195403, guid: e8500dd126fc78043a8229ea94ebfb1a,
         type: 3}
       propertyPath: foregroundController
       value: 
       objectReference: {fileID: 875018553}
-    - target: {fileID: 6105669806935894068, guid: e8500dd126fc78043a8229ea94ebfb1a,
+    - target: {fileID: 2752989564823195403, guid: e8500dd126fc78043a8229ea94ebfb1a,
         type: 3}
       propertyPath: backgroundController
       value: 
       objectReference: {fileID: 614083371}
-    - target: {fileID: 6105669806935894068, guid: e8500dd126fc78043a8229ea94ebfb1a,
+    - target: {fileID: 2752989564823195403, guid: e8500dd126fc78043a8229ea94ebfb1a,
         type: 3}
       propertyPath: gameController
       value: 
       objectReference: {fileID: 253452752}
-    - target: {fileID: 6105669806935894068, guid: e8500dd126fc78043a8229ea94ebfb1a,
+    - target: {fileID: 2752989564823195403, guid: e8500dd126fc78043a8229ea94ebfb1a,
         type: 3}
       propertyPath: healthManager
       value: 
       objectReference: {fileID: 359373241}
-    - target: {fileID: 6105669806935894068, guid: e8500dd126fc78043a8229ea94ebfb1a,
-        type: 3}
-      propertyPath: healthPoint
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 6105669807363480444, guid: e8500dd126fc78043a8229ea94ebfb1a,
         type: 3}
       propertyPath: gameController
