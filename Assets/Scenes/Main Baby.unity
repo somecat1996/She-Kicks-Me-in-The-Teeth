@@ -1107,6 +1107,7 @@ MonoBehaviour:
   animator: {fileID: 1522682746}
   healthManager: {fileID: 359373241}
   MyInpulse: {fileID: 445751937}
+  twinkle: {fileID: 0}
   invincibleTime: 1
 --- !u!114 &445751937
 MonoBehaviour:
@@ -2221,6 +2222,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3d8e40b1e7104c34e90e2fbd0236144a, type: 3}
+--- !u!212 &1003762878 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 2045102203587132801, guid: b664b99e19bfeb44293fa67fb8be292a,
+    type: 3}
+  m_PrefabInstance: {fileID: 2045102201959862647}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1021112250
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4926,6 +4933,11 @@ PrefabInstance:
       propertyPath: healthManager
       value: 
       objectReference: {fileID: 359373241}
+    - target: {fileID: 2045102203493713982, guid: b664b99e19bfeb44293fa67fb8be292a,
+        type: 3}
+      propertyPath: twinkle
+      value: 
+      objectReference: {fileID: 1003762878}
     - target: {fileID: 2045102203838797280, guid: b664b99e19bfeb44293fa67fb8be292a,
         type: 3}
       propertyPath: gameController

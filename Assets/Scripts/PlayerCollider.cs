@@ -14,10 +14,13 @@ public class PlayerCollider : MonoBehaviour
     public HealthManager healthManager;
     [Header("受伤后相机震动源")]
     public Cinemachine.CinemachineCollisionImpulseSource MyInpulse;
+    [Header("受伤后需要闪烁的图片")]
+    public SpriteRenderer twinkle;
     [Header("无敌持续时间")]
     public float invincibleTime;
+    //private float timeSpentInvincible=0;
 
-    private float timer;
+    private float timer=0;
     private bool invincible;
 
     private void Awake()
@@ -36,8 +39,17 @@ public class PlayerCollider : MonoBehaviour
             timer += Time.deltaTime;
             if (timer >= invincibleTime)
             {
+                twinkle.enabled = true;
+
                 invincible = false;
                 timer = 0;
+            }
+            else
+            {
+                //将计时器中时间取余，如果余大于0.1则图片消失
+                float remainder = timer % 0.3f;
+                twinkle.enabled = remainder > 0.1f;
+                //Debug.Log(remainder);
             }
         }
     }
@@ -53,8 +65,11 @@ public class PlayerCollider : MonoBehaviour
             MyInpulse.GenerateImpulse();
             // 设置角色无敌
             invincible = true;
+
             if (healthPoint <= 0)
             {
+                //死亡时无闪动效果
+                invincible = false;
                 // 角色死亡动画
                 animator.SetTrigger("die");
                 // 停止场景移动
@@ -65,13 +80,15 @@ public class PlayerCollider : MonoBehaviour
         }
         if (collision.tag == "Bullet")
         {
-            //Debug.Log("A");
             // 减少角色健康
             healthPoint -= 1;
             healthManager.Sub();
-
+            // 设置角色无敌
+            invincible = true;
             if (healthPoint <= 0)
             {
+                //死亡时无无敌效果
+                invincible = false;
                 // 角色死亡动画
                 animator.SetTrigger("die");
                 // 停止场景移动
@@ -82,3 +99,4 @@ public class PlayerCollider : MonoBehaviour
         }
     }
 }
+

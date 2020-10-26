@@ -606,6 +606,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 202971626}
   m_CullTransparentMesh: 0
+--- !u!212 &214704218 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 2549622570819186170, guid: 1d36d3d429b3b824dbe27c10aa3dc7ca,
+    type: 3}
+  m_PrefabInstance: {fileID: 2549622571406246156}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &253452750
 GameObject:
   m_ObjectHideFlags: 0
@@ -1056,6 +1062,7 @@ MonoBehaviour:
   animator: {fileID: 1522682746}
   healthManager: {fileID: 359373241}
   MyInpulse: {fileID: 445751937}
+  twinkle: {fileID: 0}
   invincibleTime: 1
 --- !u!114 &445751937
 MonoBehaviour:
@@ -4945,6 +4952,11 @@ PrefabInstance:
       propertyPath: backgroundController
       value: 
       objectReference: {fileID: 272373053}
+    - target: {fileID: 2549622570774140997, guid: 1d36d3d429b3b824dbe27c10aa3dc7ca,
+        type: 3}
+      propertyPath: twinkle
+      value: 
+      objectReference: {fileID: 214704218}
     - target: {fileID: 2549622570819186164, guid: 1d36d3d429b3b824dbe27c10aa3dc7ca,
         type: 3}
       propertyPath: staminaImage

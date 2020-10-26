@@ -12,6 +12,9 @@ public class EnemyBehavior : MonoBehaviour
     [Header("芭蕾舞爷爷击打掉落两颗牙齿几率")]
     public float probability=50;
 
+    [Header("伤害浮动效果图")]
+    public GameObject floatPoint;
+    
     private GameController gameController;
     // Start is called before the first frame update
     void Awake()
@@ -27,9 +30,11 @@ public class EnemyBehavior : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        
         if (collision.tag == "Attack")
         {
+            //获得牙齿的数值浮现效果
+            GameObject gb=Instantiate(floatPoint,transform.position,Quaternion.identity)as GameObject;
+            gb.transform.GetChild(0).GetComponent<TextMesh>().text = "+1";
             //牙齿掉落
             int value0=1;
             // 在enemy被攻击后，发送抖动
@@ -42,6 +47,7 @@ public class EnemyBehavior : MonoBehaviour
         //如果是芭蕾舞爷爷则有几率掉落更多牙齿，其攻击框Tag为Attack1
         else if (collision.tag == "Attack1")
         {
+
             MyInpulse.GenerateImpulse();
             anim.SetTrigger("Die");
             // 增加更多牙齿【货币】
@@ -50,11 +56,17 @@ public class EnemyBehavior : MonoBehaviour
             {
                 int value1 = 2;
                 gameController.OnDefeatEnemy(value1);
+                //获得牙齿的数值浮现效果
+                GameObject gb = Instantiate(floatPoint, transform.position, Quaternion.identity) as GameObject;
+                gb.transform.GetChild(0).GetComponent<TextMesh>().text = "+1";
             }
             else
             {
                 int value2 = 1;
                 gameController.OnDefeatEnemy(value2);
+                //获得牙齿的数值浮现效果
+                GameObject gb = Instantiate(floatPoint, transform.position, Quaternion.identity) as GameObject;
+                gb.transform.GetChild(0).GetComponent<TextMesh>().text = "+2";
             }
             
         }

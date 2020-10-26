@@ -17,6 +17,8 @@ public class Gun : MonoBehaviour
     [Header("Aun击打掉落两颗牙齿几率")]
     public float probability = 50;
 
+    public GameObject floatPoint;
+
     public Animator anim;
     private GameObject[] role;
     private GameController gameController;
@@ -62,7 +64,7 @@ public class Gun : MonoBehaviour
         //如果玩家靠近攻击路人转动画状态
         if (Vector2.Distance(role[0].transform.position, transform.position) <= restDistance)
         {
-            Debug.Log(role[0]);
+            //Debug.Log(role[0]);
             anim.SetTrigger("Sleeping");
         }
     }
@@ -80,6 +82,9 @@ public class Gun : MonoBehaviour
             anim.SetTrigger("Die");
             // 增加牙齿【货币】
             gameController.OnDefeatEnemy(value0);
+            //获得牙齿的数值浮现效果
+            GameObject gb = Instantiate(floatPoint, transform.position, Quaternion.identity) as GameObject;
+            gb.transform.GetChild(0).GetComponent<TextMesh>().text = "+1";
         }
         //如果是芭蕾舞爷爷则有几率掉落更多牙齿，其攻击框Tag为Attack1
         else if (collision.tag == "Attack1")
@@ -92,11 +97,17 @@ public class Gun : MonoBehaviour
             {
                 int value1 = 2;
                 gameController.OnDefeatEnemy(value1);
+                //获得牙齿的数值浮现效果
+                GameObject gb = Instantiate(floatPoint, transform.position, Quaternion.identity) as GameObject;
+                gb.transform.GetChild(0).GetComponent<TextMesh>().text = "+1";
             }
             else
             {
                 int value2 = 1;
                 gameController.OnDefeatEnemy(value2);
+                //获得牙齿的数值浮现效果
+                GameObject gb = Instantiate(floatPoint, transform.position, Quaternion.identity) as GameObject;
+                gb.transform.GetChild(0).GetComponent<TextMesh>().text = "+2";
             }
         }
     }

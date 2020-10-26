@@ -227,6 +227,8 @@ MonoBehaviour:
   MyInpulse: {fileID: 4256261592863739776}
   anim: {fileID: 5027864753445371563}
   probability: 50
+  floatPoint: {fileID: 2362385172939201697, guid: 2a18a887d7aec944ba4f6c4102a1d418,
+    type: 3}
 --- !u!114 &825297027523022191
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -14,6 +14,8 @@ public class AunHealth : MonoBehaviour
     public HealthManager healthManager;
     [Header("受伤后相机震动源")]
     public Cinemachine.CinemachineCollisionImpulseSource MyInpulse;
+    [Header("受伤后需要闪烁的图片")]
+    public SpriteRenderer twinkle;
     [Header("无敌持续时间")]
     public float invincibleTime;
 
@@ -36,8 +38,17 @@ public class AunHealth : MonoBehaviour
             timer += Time.deltaTime;
             if (timer >= invincibleTime)
             {
+                twinkle.enabled = true;
+
                 invincible = false;
                 timer = 0;
+            }
+            else
+            {
+                //将计时器中时间取余，如果余大于0.1则图片消失
+                float remainder = timer % 0.3f;
+                twinkle.enabled = remainder > 0.1f;
+                //Debug.Log(remainder);
             }
         }
     }
@@ -55,6 +66,8 @@ public class AunHealth : MonoBehaviour
             invincible = true;
             if (healthPoint <= 0)
             {
+                //死亡时无闪动效果
+                invincible = false;
                 // 角色死亡动画
                 animator.SetTrigger("die");
                 // 停止场景移动

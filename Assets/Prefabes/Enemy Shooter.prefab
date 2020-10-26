@@ -172,6 +172,8 @@ MonoBehaviour:
   bulletPrefab: {fileID: 4341853347830538852, guid: 1d38c31d81ed312468afb0ad58373e74,
     type: 3}
   probability: 50
+  floatPoint: {fileID: 2362385172939201697, guid: 2a18a887d7aec944ba4f6c4102a1d418,
+    type: 3}
   anim: {fileID: 5027864753445371563}
   MyInpulse: {fileID: 4256261592863739776}
 --- !u!1 &3134321981812764452
@@ -266,5 +268,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 4341853347830538852, guid: 1d38c31d81ed312468afb0ad58373e74,
     type: 3}
   probability: 50
+  floatPoint: {fileID: 2362385172939201697, guid: 2a18a887d7aec944ba4f6c4102a1d418,
+    type: 3}
   anim: {fileID: 5027864753445371563}
   MyInpulse: {fileID: 4256261592863739776}

@@ -1092,6 +1092,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &560135127 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 2966883727891110529, guid: 53e356da990b7844e8764be70b4a3308,
+    type: 3}
+  m_PrefabInstance: {fileID: 2966883729484822135}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &615601461
 GameObject:
   m_ObjectHideFlags: 0
@@ -4383,6 +4389,11 @@ PrefabInstance:
       propertyPath: healthManager
       value: 
       objectReference: {fileID: 359373241}
+    - target: {fileID: 5938562219331324049, guid: 53e356da990b7844e8764be70b4a3308,
+        type: 3}
+      propertyPath: twinkle
+      value: 
+      objectReference: {fileID: 560135127}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 53e356da990b7844e8764be70b4a3308, type: 3}
 --- !u!1001 &8815487977853071309

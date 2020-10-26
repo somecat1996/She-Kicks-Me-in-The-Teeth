@@ -3650,6 +3650,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e497dbc14d84d647a68322d2f415a17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!212 &1994204246 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 6105669808086941221, guid: e8500dd126fc78043a8229ea94ebfb1a,
+    type: 3}
+  m_PrefabInstance: {fileID: 6105669808177593962}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2009869691
 GameObject:
   m_ObjectHideFlags: 0
@@ -4167,6 +4173,11 @@ PrefabInstance:
       propertyPath: healthManager
       value: 
       objectReference: {fileID: 359373241}
+    - target: {fileID: 2752989564823195403, guid: e8500dd126fc78043a8229ea94ebfb1a,
+        type: 3}
+      propertyPath: twinkle
+      value: 
+      objectReference: {fileID: 1994204246}
     - target: {fileID: 6105669807363480444, guid: e8500dd126fc78043a8229ea94ebfb1a,
         type: 3}
       propertyPath: gameController
@@ -4257,6 +4268,26 @@ PrefabInstance:
       propertyPath: audioController
       value: 
       objectReference: {fileID: 1884131579}
+    - target: {fileID: 6105669808086941221, guid: e8500dd126fc78043a8229ea94ebfb1a,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6105669808086941221, guid: e8500dd126fc78043a8229ea94ebfb1a,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6105669808086941221, guid: e8500dd126fc78043a8229ea94ebfb1a,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6105669808086941221, guid: e8500dd126fc78043a8229ea94ebfb1a,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6105669808086941223, guid: e8500dd126fc78043a8229ea94ebfb1a,
         type: 3}
       propertyPath: staminaImage
