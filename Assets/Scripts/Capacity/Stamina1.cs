@@ -56,17 +56,18 @@ public class Stamina1 : MonoBehaviour
             tempTimer += Time.deltaTime;
         else
             isReply = true;
-        //耐力值耗光时条显示红色
-        if (staminaValue < nl)
-        {
-            HaoWan = true;
-            staminaImage.GetComponent<Image>().color = Color.red;
-        }
+        
         //重置耐力条颜色
-        else
+        if (staminaValue >= nl)
         {
             HaoWan = false;
             staminaImage.GetComponent<Image>().color = nowColor;
+        }
+        //耐力值耗光时条显示红色
+        else 
+        {
+            HaoWan = true;
+            staminaImage.GetComponent<Image>().color = Color.red;
         }
 
         //数值文本显示

@@ -4267,5 +4267,10 @@ PrefabInstance:
       propertyPath: stamina
       value: 
       objectReference: {fileID: 154076005}
+    - target: {fileID: 6105669808086941223, guid: e8500dd126fc78043a8229ea94ebfb1a,
+        type: 3}
+      propertyPath: timer
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e8500dd126fc78043a8229ea94ebfb1a, type: 3}
