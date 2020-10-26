@@ -112,7 +112,7 @@ public class BlockController : MonoBehaviour
                     // 在road转换处创建陷阱和攻击敌人
                     else if (oldRoad != newRoad && (i == oldRoad || i == newRoad) && Common.TrueFalseSelect(trapRate + aggressiveEnemyRate))
                     {
-                        if (Common.TrueFalseSelect(trapRate / (trapRate + aggressiveEnemyRate)))
+                        if (Common.TrueFalseSelect(trapRate / (trapRate + aggressiveEnemyRate)) && shiftingColCount != 0 && shiftingColCount != shiftingCol - 1)
                         {
                             GameObject tmpObject = GameObject.Instantiate(Common.RandomSelect(ref Traps), Vector3.zero, Quaternion.identity, transform);
                             switch (i)

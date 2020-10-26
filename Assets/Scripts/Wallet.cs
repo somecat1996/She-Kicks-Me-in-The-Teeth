@@ -32,7 +32,13 @@ public class Wallet
     {
         if (value < 0)
             return false;
+
+        if (PlayerPrefs.GetInt("ArchievementKnife") == 0 && value >= 100) PlayerPrefs.SetInt("ArchievementKnife", 1);
+
         gold += value;
+
+        if (PlayerPrefs.GetInt("ArchievementMedicine") == 0 && value >= 10000) PlayerPrefs.SetInt("ArchievementMedicine", 1);
+
         File.WriteAllText(Application.dataPath + "/StreamingAssets/wallet.txt", gold.ToString());
         return true;
     }

@@ -42,6 +42,8 @@ public class TrackController : MonoBehaviour
     private float score;
     private float best = 0;
 
+    private bool hasLogged = false;
+
     public float Best
     {
         get; set;
@@ -132,6 +134,30 @@ public class TrackController : MonoBehaviour
             bestText.text = "Best：" + best.ToString();
             File.WriteAllText(Application.dataPath + "/StreamingAssets/best.txt", best.ToString());
         }
+
+        if(!hasLogged)
+        {
+            if (PlayerPrefs.GetInt("TotalScore") < 0) PlayerPrefs.SetInt("TotalScore", (int)score);
+            else
+            {
+                int tmpScore = PlayerPrefs.GetInt("TotalScore");
+                PlayerPrefs.SetInt("TotalScore", (int)score + tmpScore);
+            }
+        }
+
+        if (PlayerPrefs.GetInt("ArchievementTeeth1") == 0 && PlayerPrefs.GetInt("TotalScore") >= 200) PlayerPrefs.SetInt("ArchievementTeeth1", 1);
+        if (PlayerPrefs.GetInt("ArchievementTeeth2") == 0 && PlayerPrefs.GetInt("TotalScore") >= 500) PlayerPrefs.SetInt("ArchievementTeeth2", 1);
+        if (PlayerPrefs.GetInt("ArchievementTeeth3") == 0 && PlayerPrefs.GetInt("TotalScore") >= 1000) PlayerPrefs.SetInt("ArchievementTeeth3", 1);
+
+        if (PlayerPrefs.GetInt("ArchievementStone") == 0 && score >= 1000) PlayerPrefs.SetInt("ArchievementStone", 1);
+
+        if (PlayerPrefs.GetInt("TotalDeath") <= 0) PlayerPrefs.SetInt("TotalDeath", 1);
+        else
+        {
+            int tmpDeath = PlayerPrefs.GetInt("TotalDeath");
+            PlayerPrefs.SetInt("TotalDeath", 1 + tmpDeath);
+        }
+        if (PlayerPrefs.GetInt("ArchievementFlower1") == 0 && PlayerPrefs.GetInt("TotalDeath") >= 50) PlayerPrefs.SetInt("ArchievementFlower1", 1);
     }
     /// <summary>
     /// 游戏开始

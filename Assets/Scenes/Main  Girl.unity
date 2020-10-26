@@ -1642,6 +1642,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3134321981812764452, guid: d706f7335a8e31b4d8eb78090d9f84f5,
         type: 3}
+    - target: {fileID: 3017474952956666357, guid: 6abb6074fd0479349b67c1a01e454135,
+        type: 3}
+      propertyPath: shiftingCol
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 3017474953526639697, guid: 6abb6074fd0479349b67c1a01e454135,
         type: 3}
       propertyPath: meterDisplay

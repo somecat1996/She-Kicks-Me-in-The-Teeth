@@ -12,6 +12,7 @@ TagManager:
   - ForegroundController
   - BackgroundController
   - Bullet
+  - AudioController
   layers:
   - Default
   - TransparentFX

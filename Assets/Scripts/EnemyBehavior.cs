@@ -67,6 +67,8 @@ public class EnemyBehavior : MonoBehaviour
                 //获得牙齿的数值浮现效果
                 GameObject gb = Instantiate(floatPoint, transform.position, Quaternion.identity) as GameObject;
                 gb.transform.GetChild(0).GetComponent<TextMesh>().text = "+2";
+
+                GameObject.FindGameObjectWithTag("AudioController").GetComponent<GameAudioController>().OnSpecial();
             }
             
         }

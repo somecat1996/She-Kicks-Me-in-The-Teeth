@@ -6,6 +6,7 @@ public class GameAudioController : MonoBehaviour
 {
     public AudioSource Environment;
     public AudioSource End;
+    public AudioSource Special;
     // Start is called before the first frame update
     void Start()
     {
@@ -32,5 +33,10 @@ public class GameAudioController : MonoBehaviour
     {
         Environment.Stop();
         End.Play();
+    }
+
+    public void OnSpecial()
+    {
+        Special.Play();
     }
 }

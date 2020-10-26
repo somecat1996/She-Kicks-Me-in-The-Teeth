@@ -46,7 +46,8 @@ MonoBehaviour:
   NormalEnemies:
   - {fileID: 3134321981812764452, guid: 3465f9b512d3e1447873e1ebb99e454d, type: 3}
   - {fileID: 3134321981812764452, guid: 05046daa902e70946b1bb572589a6eda, type: 3}
-  AggressiveEnemies: []
+  AggressiveEnemies:
+  - {fileID: 3134321981812764452, guid: d706f7335a8e31b4d8eb78090d9f84f5, type: 3}
   Blocks:
   - {fileID: 8483876192805189197, guid: e0fddaacf3d4a5244b1c5b017d64f976, type: 3}
   - {fileID: 8483876192805189197, guid: f9ae821bef2bfde4cbaee5dcda1b66a8, type: 3}
@@ -63,7 +64,7 @@ MonoBehaviour:
   xOffset: 0.8
   startCreation: 1
   shiftingDistance: 100
-  shiftingCol: 3
+  shiftingCol: 5
   blockRate: 2
   trapRate: 0.05
   aggressiveEnemyRate: 0.05
@@ -135,17 +136,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8751e514fec57fb47ae14b33e0b45993, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocity: 2
+  velocity: 5
   maxVelocity: 15
+  extraVelocity: 25
   acceleration: 0.2
   trackLength: 20.9
   trackOffset: 5
   tracks:
   - {fileID: 1721236799016368585, guid: fea18ea75bd48c54e80c8490b8e67938, type: 3}
   level: 2
+  meter: 0
   meterDisplay: {fileID: 0}
   finalMeterDisplay: {fileID: 0}
-  meter: 0
+  tp: 0
   bestText: {fileID: 0}
 --- !u!1001 &4468475472104120044
 PrefabInstance:

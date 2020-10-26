@@ -18,7 +18,7 @@ public class StoreController : MonoBehaviour
     void Start()
     {
         // 完全初始化，清除所有购买记录
-        // ResetStore();
+        ResetStore();
         // 初始化商店
         // 0 -- 未设置，1 -- 未购买，2 -- 已购买
         switch (PlayerPrefs.GetInt("Grandma"))
@@ -94,7 +94,7 @@ public class StoreController : MonoBehaviour
                     PlayerPrefs.SetInt("Grandpa", 2);
                     grandpaButtonAnimator.SetBool("Bought", true);
                     OnSelect(name);
-                    PlayerPrefs.SetInt("ArchievementRing", 1);
+                    if (PlayerPrefs.GetInt("ArchievementFlower2") == 0) PlayerPrefs.SetInt("ArchievementFlower2", 1);
                 }
                 else
                 {
@@ -109,7 +109,7 @@ public class StoreController : MonoBehaviour
                     PlayerPrefs.SetInt("Auntie", 2); 
                     auntieButtonAnimator.SetBool("Bought", true);
                     OnSelect(name);
-                    PlayerPrefs.SetInt("ArchievementTeeth3", 1);
+                    if (PlayerPrefs.GetInt("ArchievementRing") == 0) PlayerPrefs.SetInt("ArchievementRing", 1);
                 }
                 else
                 {
@@ -124,7 +124,7 @@ public class StoreController : MonoBehaviour
                     PlayerPrefs.SetInt("Girl", 2);
                     girlButtonAnimator.SetBool("Bought", true);
                     OnSelect(name);
-                    PlayerPrefs.SetInt("ArchievementTeeth1", 1);
+                    if (PlayerPrefs.GetInt("ArchievementComponent") == 0) PlayerPrefs.SetInt("ArchievementComponent", 1);
                 }
                 else
                 {
@@ -139,7 +139,7 @@ public class StoreController : MonoBehaviour
                     PlayerPrefs.SetInt("Baby", 2);
                     babyButtonAnimator.SetBool("Bought", true);
                     OnSelect(name);
-                    PlayerPrefs.SetInt("ArchievementFlower1", 1);
+                    if (PlayerPrefs.GetInt("ArchievementFish") == 0) PlayerPrefs.SetInt("ArchievementFish", 1);
                 }
                 else
                 {

@@ -20,7 +20,7 @@ public class AchievementController : MonoBehaviour
     void Start()
     {
         // 完全初始化
-        // Reset();
+        Reset();
         // 初始化，0--未获得，1--已获得未展示，2--已展示
         switch (PlayerPrefs.GetInt("ArchievementStone"))
         {
@@ -190,5 +190,8 @@ public class AchievementController : MonoBehaviour
         PlayerPrefs.SetInt("ArchievementTeeth2", 0);
         PlayerPrefs.SetInt("ArchievementTeeth3", 0);
         PlayerPrefs.SetInt("ArchievementMedicine", 0);
+
+        PlayerPrefs.SetInt("TotalScore", 0);
+        PlayerPrefs.SetInt("TotalDeath", 0);
     }
 }
