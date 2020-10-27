@@ -53,9 +53,13 @@ MonoBehaviour:
   - {fileID: 8483876192805189197, guid: f9ae821bef2bfde4cbaee5dcda1b66a8, type: 3}
   - {fileID: 8483876192805189197, guid: 45c697d043e55c74fb620f7faf789e5e, type: 3}
   - {fileID: 8483876192805189197, guid: c482435012a8c254099b49cc05aede60, type: 3}
+  - {fileID: 8483876192805189197, guid: 1aa04a9742e29a34693d77377ab9f0e5, type: 3}
+  - {fileID: 8483876192805189197, guid: 5c786d770631af24fa6261f3cff9e082, type: 3}
+  - {fileID: 8483876192805189197, guid: 714d8dc7ff36c87469bb8a059e6e6162, type: 3}
+  - {fileID: 8483876192805189197, guid: 16f7c256b92977647be821f0acbdd764, type: 3}
   Traps:
   - {fileID: 7294959041972830575, guid: 6c388a9d0b7afbc43820a116f2537f42, type: 3}
-  width: 3
+  width: 5
   startPosition: 10
   yPosition:
   - -0.38
@@ -137,7 +141,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocity: 5
-  maxVelocity: 15
+  maxVelocity: 12
   extraVelocity: 25
   acceleration: 0.2
   trackLength: 20.9

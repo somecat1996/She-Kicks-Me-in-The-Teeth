@@ -38,7 +38,7 @@ public class Car : MonoBehaviour
             key = true;
         }
 
-        if (!gameController.end && key&&!haoWan)
+        if (!gameController.pause && !gameController.end && key&&!haoWan)
         {
             drive = true;
             //消耗耐力值
