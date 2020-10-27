@@ -18,7 +18,7 @@ public class StoreController : MonoBehaviour
     void Start()
     {
         // 完全初始化，清除所有购买记录
-        ResetStore();
+        // ResetStore();
         // 初始化商店
         // 0 -- 未设置，1 -- 未购买，2 -- 已购买
         switch (PlayerPrefs.GetInt("Grandma"))

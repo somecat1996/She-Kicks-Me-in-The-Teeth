@@ -20,7 +20,7 @@ public class AchievementController : MonoBehaviour
     void Start()
     {
         // 完全初始化
-        Reset();
+        // Reset();
         // 初始化，0--未获得，1--已获得未展示，2--已展示
         switch (PlayerPrefs.GetInt("ArchievementStone"))
         {
