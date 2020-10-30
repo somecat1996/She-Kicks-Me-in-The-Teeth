@@ -188,7 +188,7 @@ public class StoreController : MonoBehaviour
         }
     }
 
-    private void ResetStore()
+    public void ResetStore()
     {
         PlayerPrefs.SetInt("Grandma", 2);
         PlayerPrefs.SetInt("Grandpa", 1);
@@ -196,6 +196,63 @@ public class StoreController : MonoBehaviour
         PlayerPrefs.SetInt("Girl", 1);
         PlayerPrefs.SetInt("Baby", 1);
         PlayerPrefs.SetString("Selected", "Grandma");
+
+        Wallet.Single.Reset();
+
+
+        switch (PlayerPrefs.GetInt("Grandma"))
+        {
+            case 0:
+            case 1: PlayerPrefs.SetInt("Grandma", 2); grandmaButtonAnimator.SetBool("Bought", true); break;
+            case 2: grandmaButtonAnimator.SetBool("Bought", true); break;
+            default: PlayerPrefs.SetInt("Grandma", 2); grandmaButtonAnimator.SetBool("Bought", true); break;
+        }
+
+
+        switch (PlayerPrefs.GetInt("Grandpa"))
+        {
+            case 0: PlayerPrefs.SetInt("Grandpa", 1); break;
+            case 1: break;
+            case 2: grandpaButtonAnimator.SetBool("Bought", true); break;
+            default: PlayerPrefs.SetInt("Grandpa", 1); break;
+        }
+
+
+        switch (PlayerPrefs.GetInt("Auntie"))
+        {
+            case 0: PlayerPrefs.SetInt("Auntie", 1); break;
+            case 1: break;
+            case 2: auntieButtonAnimator.SetBool("Bought", true); break;
+            default: PlayerPrefs.SetInt("Auntie", 1); break;
+        }
+
+
+        switch (PlayerPrefs.GetInt("Girl"))
+        {
+            case 0: PlayerPrefs.SetInt("Girl", 1); break;
+            case 1: break;
+            case 2: girlButtonAnimator.SetBool("Bought", true); break;
+            default: PlayerPrefs.SetInt("Girl", 1); break;
+        }
+
+
+        switch (PlayerPrefs.GetInt("Baby"))
+        {
+            case 0: PlayerPrefs.SetInt("Baby", 1); break;
+            case 1: break;
+            case 2: babyButtonAnimator.SetBool("Bought", true); break;
+            default: PlayerPrefs.SetInt("Baby", 1); break;
+        }
+
+        switch (PlayerPrefs.GetString("Selected"))
+        {
+            case "Grandma": grandmaButtonAnimator.SetBool("Check", true); break;
+            case "Grandpa": grandpaButtonAnimator.SetBool("Check", true); break;
+            case "Auntie": auntieButtonAnimator.SetBool("Check", true); break;
+            case "Girl": girlButtonAnimator.SetBool("Check", true); break;
+            case "Baby": babyButtonAnimator.SetBool("Check", true); break;
+            default: grandmaButtonAnimator.SetBool("Check", true); PlayerPrefs.SetString("Selected", "Grandma"); break;
+        }
     }
 
 

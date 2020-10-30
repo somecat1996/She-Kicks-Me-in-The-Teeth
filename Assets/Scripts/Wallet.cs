@@ -56,5 +56,11 @@ public class Wallet
         return true;
     }
 
+    public void Reset()
+    {
+        gold = 0;
+        File.WriteAllText(Application.dataPath + "/StreamingAssets/wallet.txt", gold.ToString());
+    }
+
 }
 

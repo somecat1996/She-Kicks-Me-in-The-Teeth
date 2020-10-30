@@ -177,7 +177,7 @@ public class AchievementController : MonoBehaviour
         }
     }
 
-    private void Reset()
+    public void Reset()
     {
         PlayerPrefs.SetInt("ArchievementStone", 0);
         PlayerPrefs.SetInt("ArchievementFlower1", 0);
@@ -190,6 +190,85 @@ public class AchievementController : MonoBehaviour
         PlayerPrefs.SetInt("ArchievementTeeth2", 0);
         PlayerPrefs.SetInt("ArchievementTeeth3", 0);
         PlayerPrefs.SetInt("ArchievementMedicine", 0);
+
+
+        switch (PlayerPrefs.GetInt("ArchievementStone"))
+        {
+            case 0: Stone.SetBool("Exist", false); break;
+            case 1: break;
+            case 2: Stone.SetBool("Exist", true); break;
+            default: PlayerPrefs.SetInt("ArchievementStone", 0); Stone.SetBool("Exist", false); break;
+        }
+        switch (PlayerPrefs.GetInt("ArchievementFlower1"))
+        {
+            case 0: Flower1.SetBool("Exist", false); break;
+            case 1: break;
+            case 2: Flower1.SetBool("Exist", true); break;
+            default: PlayerPrefs.SetInt("ArchievementFlower1", 0); Flower1.SetBool("Exist", false); break;
+        }
+        switch (PlayerPrefs.GetInt("ArchievementFlower2"))
+        {
+            case 0: Flower2.SetBool("Exist", false); break;
+            case 1: break;
+            case 2: Flower2.SetBool("Exist", true); break;
+            default: PlayerPrefs.SetInt("ArchievementFlower2", 0); Flower2.SetBool("Exist", false); break;
+        }
+        switch (PlayerPrefs.GetInt("ArchievementFish"))
+        {
+            case 0: Fish.SetBool("Exist", false); break;
+            case 1: break;
+            case 2: Fish.SetBool("Exist", true); break;
+            default: PlayerPrefs.SetInt("ArchievementFish", 0); Fish.SetBool("Exist", false); break;
+        }
+        switch (PlayerPrefs.GetInt("ArchievementKnife"))
+        {
+            case 0: Knife.SetBool("Exist", false); break;
+            case 1: break;
+            case 2: Knife.SetBool("Exist", true); break;
+            default: PlayerPrefs.SetInt("ArchievementKnife", 0); Knife.SetBool("Exist", false); break;
+        }
+        switch (PlayerPrefs.GetInt("ArchievementComponent"))
+        {
+            case 0: Component.SetBool("Exist", false); break;
+            case 1: break;
+            case 2: Component.SetBool("Exist", true); break;
+            default: PlayerPrefs.SetInt("ArchievementComponent", 0); Component.SetBool("Exist", false); break;
+        }
+        switch (PlayerPrefs.GetInt("ArchievementRing"))
+        {
+            case 0: Ring.SetBool("Exist", false); break;
+            case 1: break;
+            case 2: Ring.SetBool("Exist", true); break;
+            default: PlayerPrefs.SetInt("ArchievementRing", 0); Ring.SetBool("Exist", false); break;
+        }
+        switch (PlayerPrefs.GetInt("ArchievementTeeth1"))
+        {
+            case 0: Teeth1.SetBool("Exist", false); break;
+            case 1: break;
+            case 2: Teeth1.SetBool("Exist", true); break;
+            default: PlayerPrefs.SetInt("ArchievementTeeth1", 0); Teeth1.SetBool("Exist", false); break;
+        }
+        switch (PlayerPrefs.GetInt("ArchievementTeeth2"))
+        {
+            case 0: Teeth2.SetBool("Exist", false); break;
+            case 1: break;
+            case 2: Teeth2.SetBool("Exist", true); break;
+            default: PlayerPrefs.SetInt("ArchievementTeeth2", 0); Teeth2.SetBool("Exist", false); break;
+        }
+        switch (PlayerPrefs.GetInt("ArchievementTeeth3"))
+        {
+            case 0: Teeth3.SetBool("Exist", false); break;
+            case 1: break;
+            case 2: Teeth3.SetBool("Exist", true); break;
+            default: PlayerPrefs.SetInt("ArchievementTeeth3", 0); Teeth3.SetBool("Exist", false); break;
+        }
+        switch (PlayerPrefs.GetInt("ArchievementMedicine"))
+        {
+            case 0: Medicine.SetBool("Exist", false); break;
+            case 1: break;
+            case 2: Medicine.SetBool("Exist", true); break;
+            default: PlayerPrefs.SetInt("ArchievementMedicine", 0); Medicine.SetBool("Exist", false); break;
+        }
 
         PlayerPrefs.SetInt("TotalScore", 0);
         PlayerPrefs.SetInt("TotalDeath", 0);
