@@ -30,7 +30,7 @@ public class GameController : MonoBehaviour
 
 
     // 暂停游戏
-    void OnPause()
+    public void OnPause()
     {
         Time.timeScale = 0;
         pause = true;

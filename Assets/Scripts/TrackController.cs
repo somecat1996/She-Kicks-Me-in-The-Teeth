@@ -27,6 +27,7 @@ public class TrackController : MonoBehaviour
     public float meter;
 
     public Text meterDisplay;
+    public Text meterDisplay2;
     public Text finalMeterDisplay;
 
     private Rigidbody2D rb;
@@ -65,6 +66,7 @@ public class TrackController : MonoBehaviour
 
         meter = 0;
         meterDisplay.text = "Distance: " + math.floor(meter);
+        meterDisplay2.text = "Distance: " + math.floor(meter);
 
         end = true;
         //初始化飙车后速度
@@ -104,6 +106,7 @@ public class TrackController : MonoBehaviour
             //计分
             meter += System.Math.Abs(rb.velocity.x )* Time.deltaTime;
             meterDisplay.text = "Distance: " + math.floor(meter);
+            meterDisplay2.text = "Distance: " + math.floor(meter);
         }
         Rank();
     }
