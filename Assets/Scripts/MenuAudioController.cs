@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class MenuAudioController : MonoBehaviour
 {
+    public int level = 64;
+
     public AudioSource environment;
     public AudioSource payment;
     public AudioSource error;
@@ -18,6 +20,18 @@ public class MenuAudioController : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void MusicChange()
+    {
+        environment.priority = PlayerPrefs.GetInt("Music") * level;
+    }
+
+    public void SoundChange()
+    {
+        payment.priority = PlayerPrefs.GetInt("Sound") * level;
+        error.priority = PlayerPrefs.GetInt("Sound") * level;
+        boxOpen.priority = PlayerPrefs.GetInt("Sound") * level;
     }
 
     public void OnOpenBox()

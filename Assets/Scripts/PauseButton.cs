@@ -45,6 +45,12 @@ public class PauseButton : MonoBehaviour
         }
     }
 
+    public void OnEnd()
+    {
+        pauseButtonAnimator.SetBool("Active", true);
+        SetActive();
+    }
+
     void OnDeactivate()
     {
         if (gameController.pause)

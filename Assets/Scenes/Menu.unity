@@ -2905,7 +2905,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 263033492}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1299760280}
+        m_MethodName: MusicDown
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &263033492
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5688,7 +5699,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 661506467}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1299760280}
+        m_MethodName: MusicUp
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &661506467
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8066,7 +8088,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 890274706}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1299760280}
+        m_MethodName: SoundDown
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &890274706
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12274,6 +12307,7 @@ GameObject:
   - component: {fileID: 1299760282}
   - component: {fileID: 1299760281}
   - component: {fileID: 1299760279}
+  - component: {fileID: 1299760280}
   - component: {fileID: 1299760278}
   m_Layer: 5
   m_Name: Settings
@@ -12318,6 +12352,30 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &1299760280
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1299760277}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c41d0a33ac6e0b54092e57f8c303758c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioController: {fileID: 1684308269}
+  Active: {fileID: 294743518218107822, guid: 6fe51b18a9e444441bd51dc63879c871, type: 3}
+  Inactive: {fileID: 3401984468843792782, guid: 6fe51b18a9e444441bd51dc63879c871,
+    type: 3}
+  Music:
+  - {fileID: 818162914}
+  - {fileID: 1205428277}
+  - {fileID: 887229936}
+  Sound:
+  - {fileID: 1189191592}
+  - {fileID: 194100880}
+  - {fileID: 446395342}
 --- !u!114 &1299760281
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12858,7 +12916,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1362012183}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1299760280}
+        m_MethodName: SoundUp
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1362012183
 MonoBehaviour:
   m_ObjectHideFlags: 0

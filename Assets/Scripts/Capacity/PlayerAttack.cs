@@ -50,10 +50,36 @@ public class PlayerAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //传值
+        ////传值
+        //haoWan = GetComponent<Stamina1>().HaoWan;
+
+        //if (!gameController.end && Input.GetMouseButtonDown(0) && !haoWan && !gameController.end && !gameController.pause)
+        //{
+        //    if (attackStage == 0)
+        //    {
+        //        GetComponent<Stamina1>().ReduceStaminaValue(staminaValue);
+        //        //动画播放
+        //        attackStage = 1;
+        //        animator.SetInteger("Attack Stage", attackStage);
+        //        //播放音效
+        //        randomPlayAudio.RandomPlay();
+        //    }
+        //    else if (attackStage == 1)
+        //    {
+        //        attackStage = 2;
+        //    }
+        //    else if (attackStage == 2)
+        //    {
+        //        attackStage = 3;
+        //    }
+        //}
+    }
+
+    public void Attack()
+    {
         haoWan = GetComponent<Stamina1>().HaoWan;
 
-        if (!gameController.end && Input.GetMouseButtonDown(0) && !haoWan && !gameController.end && !gameController.pause)
+        if (!gameController.end && !haoWan && !gameController.end && !gameController.pause)
         {
             if (attackStage == 0)
             {

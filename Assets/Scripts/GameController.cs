@@ -13,6 +13,8 @@ public class GameController : MonoBehaviour
     public bool end;
     public bool pause = false;
 
+    public PauseButton pauseButton;
+
     private int teeth;
     // Start is called before the first frame update
     void Awake()
@@ -70,6 +72,8 @@ public class GameController : MonoBehaviour
         end = true;
         teethUI.SetActive(true);
         teethUI.GetComponent<TeethCreator>().SetTeethNumber(teeth);
+
+        pauseButton.OnEnd();
     }
     // 退出游戏，绑定于主菜单按键
     public void OnQuit()
