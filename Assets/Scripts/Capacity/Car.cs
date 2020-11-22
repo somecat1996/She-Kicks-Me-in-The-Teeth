@@ -33,12 +33,12 @@ public class Car : MonoBehaviour
         //传值
         haoWan = GetComponent<Stamina>().HaoWan;
 
-        if (Input.GetMouseButtonDown(0))
-        {
-            key = true;
-        }
+        //if (Input.GetMouseButtonDown(0))
+        //{
+        //    key = true;
+        //}
 
-        if (!gameController.pause && !gameController.end && key&&!haoWan)
+        if (!gameController.pause && !gameController.end && key && !haoWan)
         {
             drive = true;
             //消耗耐力值
@@ -56,7 +56,26 @@ public class Car : MonoBehaviour
             //开启角色可以被伤害判定
             body.SetActive(true);
             anim.SetBool("Drive", false);
-        }      
+        }
+    }
+
+    public void Attack()
+    {
+        //传值
+        haoWan = GetComponent<Stamina>().HaoWan;
+
+        key = true;
+
+        if (!gameController.pause && !gameController.end && !haoWan)
+        {
+            drive = true;
+            //消耗耐力值
+            GetComponent<Stamina>().ReduceStaminaValue(staminaValue);
+            //开启动画
+            anim.SetBool("Drive", true);
+            //关闭角色可以被伤害判定
+            body.SetActive(false);
+        }
     }
     //开车冲刺
     private void OnTriggerEnter2D(Collider2D collision)

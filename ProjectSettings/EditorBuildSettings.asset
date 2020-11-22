@@ -15,7 +15,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Main GF.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Scenes/Main  Girl.unity
+    path: Assets/Scenes/Main Girl.unity
     guid: 0e104a2243e09cb4386b2fb644b05dc5
   - enabled: 1
     path: Assets/Scenes/Main Baby.unity
