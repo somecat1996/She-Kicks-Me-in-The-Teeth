@@ -1,0 +1,4 @@
+repository "She Kicks Me in The Teeth@lynnwong@cloud.cn"
+  path "/"
+    br "/main"
+    co "/main"

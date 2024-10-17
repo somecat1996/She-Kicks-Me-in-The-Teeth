@@ -20,7 +20,7 @@ public class Wallet
 
     private Wallet()
     {
-        gold = int.Parse(File.ReadAllText(Application.dataPath + "/StreamingAssets/wallet.txt"));
+        gold = int.Parse(File.ReadAllText(Path.Combine(Application.streamingAssetsPath, "wallet.txt")));
     }
 
     /// <summary>
@@ -39,7 +39,7 @@ public class Wallet
 
         if (PlayerPrefs.GetInt("ArchievementMedicine") == 0 && value >= 10000) PlayerPrefs.SetInt("ArchievementMedicine", 1);
 
-        File.WriteAllText(Application.dataPath + "/StreamingAssets/wallet.txt", gold.ToString());
+        File.WriteAllText(Path.Combine(Application.streamingAssetsPath, "wallet.txt"), gold.ToString());
         return true;
     }
     /// <summary>
@@ -52,14 +52,15 @@ public class Wallet
         if (value > gold)
             return false;
         gold -= value;
-        File.WriteAllText(Application.dataPath + "/StreamingAssets/wallet.txt", gold.ToString());
+        File.WriteAllText(Path.Combine(Application.streamingAssetsPath, "wallet.txt"), gold.ToString());
         return true;
     }
 
     public void Reset()
     {
         gold = 0;
-        File.WriteAllText(Application.dataPath + "/StreamingAssets/wallet.txt", gold.ToString());
+        // File.WriteAllText(Application.dataPath + "/StreamingAssets/wallet.txt", gold.ToString());
+        File.WriteAllText(Path.Combine(Application.streamingAssetsPath, "wallet.txt"), gold.ToString());
     }
 
 }

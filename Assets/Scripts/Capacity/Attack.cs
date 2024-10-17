@@ -50,14 +50,14 @@ public class Attack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        ////传值
-        //haoWan = GetComponent<Stamina>().HaoWan;
+        //传值
+        haoWan = GetComponent<Stamina>().HaoWan;
 
-        //if (!gameController.end && Input.GetMouseButtonDown(0) && !haoWan && !gameController.end && !gameController.pause)
-        //{
-        //        //动画播放
-        //        animator.SetTrigger("Attack");
-        //}
+        if (!gameController.end && Input.GetMouseButtonDown(0) && !haoWan && !gameController.end && !gameController.pause)
+        {
+            //动画播放
+            animator.SetTrigger("Attack");
+        }
     }
 
     public void OnAttack()

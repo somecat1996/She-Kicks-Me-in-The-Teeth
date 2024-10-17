@@ -19,6 +19,17 @@ public class AchievementController : MonoBehaviour
     // 初始化
     void Start()
     {
+        PlayerPrefs.SetInt("ArchievementStone", 1);
+        PlayerPrefs.SetInt("ArchievementFlower1", 1);
+        PlayerPrefs.SetInt("ArchievementFlower2", 1);
+        PlayerPrefs.SetInt("ArchievementFish", 1);
+        PlayerPrefs.SetInt("ArchievementKnife", 1);
+        PlayerPrefs.SetInt("ArchievementComponent", 1);
+        PlayerPrefs.SetInt("ArchievementRing", 1);
+        PlayerPrefs.SetInt("ArchievementTeeth1", 1);
+        PlayerPrefs.SetInt("ArchievementTeeth2", 1);
+        PlayerPrefs.SetInt("ArchievementTeeth3", 1);
+        PlayerPrefs.SetInt("ArchievementMedicine", 1);
         // 完全初始化
         // Reset();
         // 初始化，0--未获得，1--已获得未展示，2--已展示
